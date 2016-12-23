@@ -16,7 +16,11 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.js$/, include: __dirname + '/client/app', loader: "babel-loader"},
-      { test: /\.css$/, loader: "style-loader!css-loader" }
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      {
+       test: /\.scss$/,
+       loaders: ["style-loader", "css-loader", "sass-loader"]
+     }
     ]
   },
   plugins: [HTMLWebpackPluginConfig]

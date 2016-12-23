@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
-require('../main.css');
+require('../main.scss');
 var Header = require('./Header');
 var Picture = require('./Picture');
 
