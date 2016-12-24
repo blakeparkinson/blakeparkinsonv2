@@ -21475,7 +21475,7 @@
 	var hashHistory = ReactRouter.hashHistory;
 	var IndexRoute = ReactRouter.IndexRoute;
 	var Main = __webpack_require__(235);
-	var Home = __webpack_require__(255);
+	var HomeContainer = __webpack_require__(255);
 
 	var routes = React.createElement(
 	  Router,
@@ -21483,7 +21483,7 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: Main },
-	    React.createElement(IndexRoute, { component: Home })
+	    React.createElement(IndexRoute, { component: HomeContainer })
 	  )
 	);
 
@@ -29011,69 +29011,47 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(2);
-	var ReactRouter = __webpack_require__(180);
-	var Link = ReactRouter.Link;
-	var MainContainer = __webpack_require__(256);
+	var Home = __webpack_require__(256);
 
-	function Home() {
-	  return React.createElement(
-	    MainContainer,
-	    null,
-	    React.createElement(
-	      'h1',
-	      null,
-	      'Github Battle'
-	    ),
-	    React.createElement(
-	      'p',
-	      { className: 'lead' },
-	      'What even is a jQuery?'
-	    ),
-	    React.createElement(
-	      Link,
-	      { to: '/playerOne' },
-	      React.createElement(
-	        'button',
-	        { type: 'button', className: 'btn btn-lg btn-success' },
-	        'Get Started'
-	      )
-	    )
-	  );
-	}
+	var HomeContainer = React.createClass({
+	  displayName: 'HomeContainer',
 
-	module.exports = Home;
+	  getInitialState: function () {
+	    return {
+	      typewriter: 'hi'
+	    };
+	  },
+	  componentDidMount: function () {
+	    console.log('hi');
+	  },
+	  render: function () {
+	    return React.createElement(Home, {
+	      typerwriter: this.state.typerwriter });
+	  }
+	});
+
+	module.exports = HomeContainer;
 
 /***/ },
 /* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(2);
-	var styles = __webpack_require__(257);
+	var PropTypes = React.PropTypes;
 
-	function MainContainer(props) {
+	function Home(props) {
 	  return React.createElement(
 	    'div',
-	    { className: 'jumbotron col-sm-12 text-center', style: styles.transparentBg },
-	    props.children
+	    null,
+	    props.typewriter
 	  );
 	}
 
-	module.exports = MainContainer;
-
-/***/ },
-/* 257 */
-/***/ function(module, exports) {
-
-	var styles = {
-	  transparentBg: {
-	    background: 'transparent'
-	  },
-	  space: {
-	    marginTop: '25px'
-	  }
+	Home.propTypes = {
+	  typerwriter: PropTypes.string.isRequired
 	};
 
-	module.exports = styles;
+	module.exports = Home;
 
 /***/ }
 /******/ ]);

@@ -1,19 +1,22 @@
 var React = require('react');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link
-var MainContainer = require('./MainContainer');
+var PropTypes = React.PropTypes;
 
 
-function Home () {
+
+function Home (props) {
   return (
-    <MainContainer>
-      <h1>Github Battle</h1>
-      <p className='lead'>What even is a jQuery?</p>
-      <Link to='/playerOne'>
-        <button type='button' className='btn btn-lg btn-success'>Get Started</button>
-      </Link>
-    </MainContainer>
+    <div>
+    <div className="intro-row">
+      <img className="blake" src="../images/blake.jpg"/>
+      <div className="intro">{props.typewriter}</div>
+    </div>
+    <div className="jagged"></div>
+    </div>
   )
+}
+
+Home.propTypes = {
+  typerwriter: PropTypes.string
 }
 
 module.exports = Home;
