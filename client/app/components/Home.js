@@ -1,6 +1,8 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var Achievements = require('./Achievements');
+var Find = require('./Find');
+
 
 
 
@@ -14,6 +16,7 @@ function Home (props) {
     </div>
     <div className="jagged"></div>
     <Achievements/>
+    <Find/>
     </div>
   )
 }
