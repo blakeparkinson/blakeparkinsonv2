@@ -1,5 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var Achievements = require('./Achievements');
+
 
 
 
@@ -11,6 +13,7 @@ function Home (props) {
       <div className="intro">{props.typewriter}</div>
     </div>
     <div className="jagged"></div>
+    <Achievements/>
     </div>
   )
 }
