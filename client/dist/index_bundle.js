@@ -26402,13 +26402,13 @@
 	var ReactCSSTransitionGroup = __webpack_require__(236);
 	__webpack_require__(249);
 	var Header = __webpack_require__(253);
-	var Picture = __webpack_require__(254);
+	var Achievements = __webpack_require__(254);
 
 	var Main = props => React.createElement(
 	  'div',
 	  { className: 'main-container' },
 	  React.createElement(Header, null),
-	  React.createElement(Picture, null)
+	  props.children
 	);
 
 	module.exports = Main;
@@ -28990,21 +28990,82 @@
 
 	var React = __webpack_require__(2);
 	var ReactCSSTransitionGroup = __webpack_require__(236);
-	__webpack_require__(249);
 
-	var Picture = props => React.createElement(
+	var Achievements = props => React.createElement(
 	  'div',
-	  null,
+	  { className: 'third' },
 	  React.createElement(
 	    'div',
-	    { className: 'intro-row' },
-	    React.createElement('img', { className: 'blake', src: '../images/blake.jpg' }),
-	    React.createElement('div', { className: 'intro' })
-	  ),
-	  React.createElement('div', { className: 'jagged' })
+	    { className: 'container' },
+	    React.createElement(
+	      'h3',
+	      { className: 'cursive', id: 'achievements' },
+	      'Achievements'
+	    ),
+	    React.createElement(
+	      'div',
+	      { className: 'sub' },
+	      'Places I\'ve worked. Things I\'ve done'
+	    ),
+	    React.createElement(
+	      'ul',
+	      null,
+	      React.createElement(
+	        'li',
+	        { className: 'col-sm-12 col-md-4 list edmodo achievements' },
+	        React.createElement('img', { className: 'edmodo-img', src: '/images/edmodo.png' }),
+	        React.createElement(
+	          'span',
+	          { className: 'onehalf-x' },
+	          'Edmodo'
+	        ),
+	        React.createElement(
+	          'div',
+	          null,
+	          'I worked at Edmodo, where I worked on various projects from the backend API to front end landing pages'
+	        )
+	      ),
+	      React.createElement(
+	        'li',
+	        { className: 'col-sm-12 col-md-4 list achievements fonts' },
+	        React.createElement('i', { className: 'fa fa-bolt three-x' }),
+	        React.createElement(
+	          'span',
+	          { className: 'onehalf-x' },
+	          'RosterBlitz'
+	        ),
+	        React.createElement(
+	          'div',
+	          null,
+	          'I founded',
+	          React.createElement(
+	            'a',
+	            { href: 'https://www.rosterblitz.com' },
+	            'RosterBlitz'
+	          ),
+	          ', the premier sports quizzing website on the internet.'
+	        )
+	      ),
+	      React.createElement(
+	        'li',
+	        { className: 'col-sm-12 col-md-4 list achievements fonts' },
+	        React.createElement('i', { className: 'fa fa-building three-x' }),
+	        React.createElement(
+	          'span',
+	          { className: 'onehalf-x' },
+	          'NCTI'
+	        ),
+	        React.createElement(
+	          'div',
+	          null,
+	          'I worked at NCTI where I built a beautiful node/angular app from scratch.'
+	        )
+	      )
+	    )
+	  )
 	);
 
-	module.exports = Picture;
+	module.exports = Achievements;
 
 /***/ },
 /* 255 */
@@ -29018,15 +29079,31 @@
 
 	  getInitialState: function () {
 	    return {
-	      typewriter: 'hi'
+	      typewriter: ''
 	    };
 	  },
 	  componentDidMount: function () {
-	    console.log('hi');
+
+	    var content = "Hi I'm Blake, a software engineer and designer.";
+	    var write = '';
+	    var i = 0;
+	    setInterval(function () {
+	      if (i < content.length) {
+	        write = write.replace('|', '');
+	        if (i == content.length - 1) {
+	          write += content[i];
+	        } else {
+	          write += content[i] + '|';
+	        }
+	        i++;
+	        this.setState({
+	          typewriter: write
+	        });
+	      }
+	    }.bind(this), 100);
 	  },
 	  render: function () {
-	    return React.createElement(Home, {
-	      typerwriter: this.state.typerwriter });
+	    return React.createElement(Home, { typewriter: this.state.typewriter });
 	  }
 	});
 
@@ -29038,20 +29115,170 @@
 
 	var React = __webpack_require__(2);
 	var PropTypes = React.PropTypes;
+	var Achievements = __webpack_require__(254);
+	var Find = __webpack_require__(257);
+	var Contact = __webpack_require__(258);
 
 	function Home(props) {
+	  var img = './images/blake.jpg';
 	  return React.createElement(
 	    'div',
 	    null,
-	    props.typewriter
+	    React.createElement(
+	      'div',
+	      { className: 'intro-row' },
+	      React.createElement('img', { className: 'blake', src: img }),
+	      React.createElement(
+	        'div',
+	        { className: 'intro' },
+	        props.typewriter
+	      )
+	    ),
+	    React.createElement('div', { className: 'jagged' }),
+	    React.createElement(Achievements, null),
+	    React.createElement(Find, null),
+	    React.createElement(Contact, null)
 	  );
 	}
 
 	Home.propTypes = {
-	  typerwriter: PropTypes.string.isRequired
+	  typerwriter: PropTypes.string
 	};
 
 	module.exports = Home;
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(2);
+
+	var Find = props => React.createElement(
+	  "div",
+	  { className: "second" },
+	  React.createElement(
+	    "div",
+	    { className: "container contact" },
+	    React.createElement(
+	      "h3",
+	      { className: "cursive", id: "find" },
+	      "Find me"
+	    ),
+	    React.createElement(
+	      "div",
+	      { className: "sub" },
+	      "Links and stuff"
+	    ),
+	    React.createElement(
+	      "ul",
+	      null,
+	      React.createElement(
+	        "li",
+	        { className: "col-sm-12 col-md-4 list " },
+	        React.createElement("i", { className: "fa fa-github-alt three-x" }),
+	        React.createElement(
+	          "span",
+	          { className: "onehalf-x" },
+	          React.createElement(
+	            "a",
+	            { href: "https://www.github.com/blakeparkinson/", target: "_blank" },
+	            "GitHub"
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        "li",
+	        { className: "col-sm-12 col-md-4 list" },
+	        React.createElement("i", { className: "fa fa-linkedin three-x" }),
+	        React.createElement(
+	          "span",
+	          { className: "onehalf-x" },
+	          React.createElement(
+	            "a",
+	            { href: "https://www.linkedin.com/in/bparky", target: "_blank" },
+	            "LinkedIn"
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        "li",
+	        { className: "col-sm-12 col-md-4 list" },
+	        React.createElement("i", { className: "fa fa-facebook three-x" }),
+	        React.createElement(
+	          "span",
+	          { className: "onehalf-x" },
+	          React.createElement(
+	            "a",
+	            { href: "https://www.facebook.com/blakeparkinson", target: "_blank" },
+	            "Facebook"
+	          )
+	        )
+	      )
+	    )
+	  )
+	);
+
+	module.exports = Find;
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(2);
+
+	var Contact = props => React.createElement(
+	  "div",
+	  { className: "third" },
+	  React.createElement(
+	    "div",
+	    { className: "container contact" },
+	    React.createElement(
+	      "h3",
+	      { className: "cursive", id: "info" },
+	      "Contact Me"
+	    ),
+	    React.createElement(
+	      "div",
+	      { className: "sub" },
+	      "I do web development, play soccer with you, babysit your kids. Message me and let's chat!"
+	    ),
+	    React.createElement(
+	      "ul",
+	      null,
+	      React.createElement(
+	        "form",
+	        { name: "email" },
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "label",
+	            { className: "control-label" },
+	            "Your email."
+	          ),
+	          React.createElement("input", { className: "form-control email", name: "email", required: true }),
+	          React.createElement(
+	            "div",
+	            null,
+	            React.createElement(
+	              "label",
+	              { className: "control-label" },
+	              "What's up?"
+	            )
+	          ),
+	          React.createElement("textarea", { className: "form-control" }),
+	          React.createElement(
+	            "div",
+	            { className: "btn btn-warning" },
+	            "Send"
+	          )
+	        )
+	      )
+	    )
+	  )
+	);
+
+	module.exports = Contact;
 
 /***/ }
 /******/ ]);
