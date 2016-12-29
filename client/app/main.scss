@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
 html{
   background-color: #E6F5F7;
 }
@@ -12,10 +14,13 @@ html{
 }
 body {
   padding: 0;
-  font-family: Alegreya Sans;
+font-family: 'Poiret One', cursive;
   color: #77797b;
 }
 .navbar-default {
+  .container{
+    width: inherit;
+  }
   background-color: #D6451A;
   border: none;
   .navbar-nav > li > a {
@@ -155,11 +160,9 @@ body {
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
   .navbar-nav {
     padding-top: 5px;
+    float: right;
   }
   .small {
     display: none;

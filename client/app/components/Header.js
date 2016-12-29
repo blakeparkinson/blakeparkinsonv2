@@ -2,6 +2,15 @@ var React = require('react');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 require('../main.scss');
 
+var goat = require('../images/goat.svg');
+
+var goatStyles = {
+  float: "left",
+  width: "40px",
+  marginTop: "8px"
+};
+
+
 var Header = props => (
       <div className='main-container'>
 
@@ -21,6 +30,9 @@ var Header = props => (
 
     </div>
 
+    <div className="logo">
+      <img style={goatStyles} src={goat}/>
+    </div>
     <div className="collapse navbar-collapse" id="js-navbar-collapse">
 
       <ul className="nav navbar-nav">
