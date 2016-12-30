@@ -16,7 +16,9 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.js$/, include: __dirname + '/client/app', loader: "babel-loader"},
+      {test: /\.js$/, include: __dirname + '/client/app', loader: "babel-loader",  query: {
+          presets: ['es2015']
+        }},
       { test: /\.css$/, loader: "style-loader!css-loader" },
       {
        test: /\.scss$/,
