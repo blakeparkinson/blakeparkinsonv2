@@ -1,8 +1,12 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 require('../main.scss');
 
+
+
 var goat = require('../images/goat.svg');
+
 
 var goatStyles = {
   float: "left",
@@ -10,35 +14,25 @@ var goatStyles = {
   marginTop: "8px"
 };
 
+var mainStyle = {
+  zIndex: "100"
+};
+
 
 var Header = props => (
-      <div className='main-container'>
 
-<div className="header">
+      <div className='main-container' style={mainStyle}>
+
+<div className={props.headerClass} id="mainHeader">
 <div className="navbar-default" role="navigation">
   <div className="container">
-    <div className="navbar-header">
-
-      <span className="bp-blue small"></span>
-
-      <button className="navbar-toggle collapsed" data-target="#js-navbar-collapse" data-toggle="collapse" type="button">
-        <span className="sr-only">Toggle navigation</span>
-        <span className="icon-bar"></span>
-        <span className="icon-bar"></span>
-        <span className="icon-bar"></span>
-      </button>
-
-    </div>
 
     <div className="logo">
       <img style={goatStyles} src={goat}/>
     </div>
-    <div className="collapse navbar-collapse" id="js-navbar-collapse">
+    <div className="">
 
       <ul className="nav navbar-nav">
-        <li>
-          <a className="pointer">Skills</a>
-        </li>
         <li>
           <a className="pointer">Achievements</a>
         </li>
@@ -54,9 +48,17 @@ var Header = props => (
 
   </div>
 </div>
+
 </div>
+
+
 </div>
+
     );
+
+    Header.propTypes = {
+      headerClass: PropTypes.string
+    }
 
 
 module.exports = Header;

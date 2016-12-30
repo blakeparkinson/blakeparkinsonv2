@@ -4,16 +4,25 @@ var Achievements = require('./Achievements');
 var Find = require('./Find');
 var Contact = require('./Contact');
 
+var typewriterStyle = {
+  color: "#333333",
+  fontFamily: "'Special Elite', cursive"
+};
+
 
 
 function Home (props) {
-  var img = require('../images/blake.jpg');
+  var img = require('../images/blake.png');
+
+  var picStyle = {
+    opacity: props.opacity
+  }
 
   return (
     <div>
     <div className="intro-row">
-      <img className="blake" src={img}/>
-      <div className="intro">{props.typewriter}</div>
+      <img className="blake" src={img} style={picStyle}/>
+      <div className="intro" style={typewriterStyle}>{props.typewriter}</div>
     </div>
     <div className="jagged"></div>
     <Achievements/>
@@ -24,7 +33,8 @@ function Home (props) {
 }
 
 Home.propTypes = {
-  typerwriter: PropTypes.string
+  typerwriter: PropTypes.string,
+  opacity: PropTypes.number
 }
 
 module.exports = Home;
