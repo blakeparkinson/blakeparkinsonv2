@@ -8,7 +8,6 @@ var Picture = props => (
     <img className="blake" src="../images/blake.jpg"/>
     <div className="intro"></div>
   </div>
-  <div className="jagged"></div>
   </div>
 )
 

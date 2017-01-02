@@ -21478,15 +21478,15 @@
 	var Route = ReactRouter.Route;
 	var hashHistory = ReactRouter.hashHistory;
 	var IndexRoute = ReactRouter.IndexRoute;
-	var Main = __webpack_require__(235);
-	var HomeContainer = __webpack_require__(265);
+	var MainContainer = __webpack_require__(235);
+	var HomeContainer = __webpack_require__(262);
 
 	var routes = React.createElement(
 	  Router,
 	  { history: hashHistory },
 	  React.createElement(
 	    Route,
-	    { path: '/', component: Main },
+	    { path: '/', component: MainContainer },
 	    React.createElement(IndexRoute, { component: HomeContainer })
 	  )
 	);
@@ -26405,30 +26405,539 @@
 	'use strict';
 
 	var React = __webpack_require__(2);
-	var ReactCSSTransitionGroup = __webpack_require__(236);
-	__webpack_require__(249);
-	var Header = __webpack_require__(253);
-	var Achievements = __webpack_require__(264);
+	var Main = __webpack_require__(236);
 
-	var Main = function Main(props) {
-	  return React.createElement(
-	    'div',
-	    { className: 'main-container' },
-	    React.createElement(Header, null),
-	    props.children
-	  );
-	};
+	var previousTop;
 
-	module.exports = Main;
+	var MainContainer = React.createClass({
+	  displayName: 'MainContainer',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      headerClass: ''
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+
+	    window.addEventListener('scroll', this.handleScroll);
+	  },
+
+	  handleScroll: function handleScroll(event) {
+
+	    var headerHeight = document.getElementById('mainHeader').clientHeight;
+	    var top = window.pageYOffset || document.documentElement.scrollTop;
+	    if (top > headerHeight + 50) {
+	      if (top < previousTop) {
+	        this.setState({
+	          headerClass: 'fadeIn animated'
+	        });
+	      } else {
+	        this.setState({
+	          headerClass: 'fadeOut animated'
+	        });
+	      }
+	    }
+	    previousTop = top;
+	  },
+
+	  render: function render() {
+	    return React.createElement(Main, { children: this.props.children, headerClass: this.state.headerClass });
+	  }
+	});
+
+	module.exports = MainContainer;
 
 /***/ },
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(237);
+	'use strict';
+
+	var _reactSticky = __webpack_require__(237);
+
+	var React = __webpack_require__(2);
+	var PropTypes = React.PropTypes;
+	var ReactCSSTransitionGroup = __webpack_require__(241);
+	__webpack_require__(254);
+	var Header = __webpack_require__(258);
+	var Achievements = __webpack_require__(260);
+
+
+	var Main = function Main(props) {
+	  return React.createElement(
+	    _reactSticky.StickyContainer,
+	    null,
+	    React.createElement(
+	      'div',
+	      { className: 'main-container' },
+	      React.createElement(
+	        _reactSticky.Sticky,
+	        null,
+	        React.createElement(Header, { headerClass: props.headerClass })
+	      ),
+	      props.children
+	    )
+	  );
+	};
+
+	Main.propTypes = {
+	  children: PropTypes.object,
+	  headerClass: PropTypes.string
+	};
+
+	module.exports = Main;
 
 /***/ },
 /* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Channel = exports.StickyContainer = exports.Sticky = undefined;
+
+	var _sticky = __webpack_require__(238);
+
+	var _sticky2 = _interopRequireDefault(_sticky);
+
+	var _container = __webpack_require__(239);
+
+	var _container2 = _interopRequireDefault(_container);
+
+	var _channel = __webpack_require__(240);
+
+	var _channel2 = _interopRequireDefault(_channel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.Sticky = _sticky2.default;
+	exports.StickyContainer = _container2.default;
+	exports.Channel = _channel2.default;
+	exports.default = _sticky2.default;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Sticky = function (_React$Component) {
+	  _inherits(Sticky, _React$Component);
+
+	  function Sticky(props) {
+	    _classCallCheck(this, Sticky);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Sticky).call(this, props));
+
+	    _this.updateContext = function (_ref) {
+	      var inherited = _ref.inherited;
+	      var node = _ref.node;
+
+	      _this.containerNode = node;
+	      _this.setState({
+	        containerOffset: inherited,
+	        distanceFromBottom: _this.getDistanceFromBottom()
+	      });
+	    };
+
+	    _this.recomputeState = function () {
+	      var isSticky = _this.isSticky();
+	      var height = _this.getHeight();
+	      var width = _this.getWidth();
+	      var xOffset = _this.getXOffset();
+	      var distanceFromBottom = _this.getDistanceFromBottom();
+	      var hasChanged = _this.state.isSticky !== isSticky;
+
+	      _this.setState({ isSticky: isSticky, height: height, width: width, xOffset: xOffset, distanceFromBottom: distanceFromBottom });
+
+	      if (hasChanged) {
+	        if (_this.channel) {
+	          _this.channel.update(function (data) {
+	            data.offset = isSticky ? _this.state.height : 0;
+	          });
+	        }
+
+	        _this.props.onStickyStateChange(isSticky);
+	      }
+	    };
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(Sticky, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.channel = this.context['sticky-channel'];
+	      this.channel.subscribe(this.updateContext);
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.on(['resize', 'scroll', 'touchstart', 'touchmove', 'touchend', 'pageshow', 'load'], this.recomputeState);
+	      this.recomputeState();
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps() {
+	      this.recomputeState();
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.off(['resize', 'scroll', 'touchstart', 'touchmove', 'touchend', 'pageshow', 'load'], this.recomputeState);
+	      this.channel.unsubscribe(this.updateContext);
+	    }
+	  }, {
+	    key: 'getXOffset',
+	    value: function getXOffset() {
+	      return this.refs.placeholder.getBoundingClientRect().left;
+	    }
+	  }, {
+	    key: 'getWidth',
+	    value: function getWidth() {
+	      return this.refs.placeholder.getBoundingClientRect().width;
+	    }
+	  }, {
+	    key: 'getHeight',
+	    value: function getHeight() {
+	      return _reactDom2.default.findDOMNode(this.refs.children).getBoundingClientRect().height;
+	    }
+	  }, {
+	    key: 'getDistanceFromTop',
+	    value: function getDistanceFromTop() {
+	      return this.refs.placeholder.getBoundingClientRect().top;
+	    }
+	  }, {
+	    key: 'getDistanceFromBottom',
+	    value: function getDistanceFromBottom() {
+	      if (!this.containerNode) return 0;
+	      return this.containerNode.getBoundingClientRect().bottom;
+	    }
+	  }, {
+	    key: 'isSticky',
+	    value: function isSticky() {
+	      if (!this.props.isActive) return false;
+
+	      var fromTop = this.getDistanceFromTop();
+	      var fromBottom = this.getDistanceFromBottom();
+
+	      var topBreakpoint = this.state.containerOffset - this.props.topOffset;
+	      var bottomBreakpoint = this.state.containerOffset + this.props.bottomOffset;
+
+	      return fromTop <= topBreakpoint && fromBottom >= bottomBreakpoint;
+	    }
+	  }, {
+	    key: 'on',
+	    value: function on(events, callback) {
+	      events.forEach(function (evt) {
+	        window.addEventListener(evt, callback);
+	      });
+	    }
+	  }, {
+	    key: 'off',
+	    value: function off(events, callback) {
+	      events.forEach(function (evt) {
+	        window.removeEventListener(evt, callback);
+	      });
+	    }
+	  }, {
+	    key: 'shouldComponentUpdate',
+	    value: function shouldComponentUpdate(newProps, newState) {
+	      var _this2 = this;
+
+	      // Have we changed the number of props?
+	      var propNames = Object.keys(this.props);
+	      if (Object.keys(newProps).length != propNames.length) return true;
+
+	      // Have we changed any prop values?
+	      var valuesMatch = propNames.every(function (key) {
+	        return newProps.hasOwnProperty(key) && newProps[key] === _this2.props[key];
+	      });
+	      if (!valuesMatch) return true;
+
+	      // Have we changed any state that will always impact rendering?
+	      var state = this.state;
+	      if (newState.isSticky !== state.isSticky) return true;
+
+	      // If we are sticky, have we changed any state that will impact rendering?
+	      if (state.isSticky) {
+	        if (newState.height !== state.height) return true;
+	        if (newState.width !== state.width) return true;
+	        if (newState.xOffset !== state.xOffset) return true;
+	        if (newState.containerOffset !== state.containerOffset) return true;
+	        if (newState.distanceFromBottom !== state.distanceFromBottom) return true;
+	      }
+
+	      return false;
+	    }
+
+	    /*
+	     * The special sauce.
+	     */
+
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var placeholderStyle = { paddingBottom: 0 };
+	      var className = this.props.className;
+
+	      // To ensure that this component becomes sticky immediately on mobile devices instead
+	      // of disappearing until the scroll event completes, we add `transform: translateZ(0)`
+	      // to 'kick' rendering of this element to the GPU
+	      // @see http://stackoverflow.com/questions/32875046
+	      var style = _extends({}, { transform: 'translateZ(0)' }, this.props.style);
+
+	      if (this.state.isSticky) {
+	        var _stickyStyle = {
+	          position: 'fixed',
+	          top: this.state.containerOffset,
+	          left: this.state.xOffset,
+	          width: this.state.width
+	        };
+
+	        var bottomLimit = this.state.distanceFromBottom - this.state.height - this.props.bottomOffset;
+	        if (this.state.containerOffset > bottomLimit) {
+	          _stickyStyle.top = bottomLimit;
+	        }
+
+	        placeholderStyle.paddingBottom = this.state.height;
+
+	        className += ' ' + this.props.stickyClassName;
+	        style = _extends({}, style, _stickyStyle, this.props.stickyStyle);
+	      }
+
+	      var _props = this.props;
+	      var topOffset = _props.topOffset;
+	      var isActive = _props.isActive;
+	      var stickyClassName = _props.stickyClassName;
+	      var stickyStyle = _props.stickyStyle;
+	      var bottomOffset = _props.bottomOffset;
+	      var onStickyStateChange = _props.onStickyStateChange;
+
+	      var props = _objectWithoutProperties(_props, ['topOffset', 'isActive', 'stickyClassName', 'stickyStyle', 'bottomOffset', 'onStickyStateChange']);
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement('div', { ref: 'placeholder', style: placeholderStyle }),
+	        _react2.default.createElement(
+	          'div',
+	          _extends({}, props, { ref: 'children', className: className, style: style }),
+	          this.props.children
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Sticky;
+	}(_react2.default.Component);
+
+	Sticky.propTypes = {
+	  isActive: _react2.default.PropTypes.bool,
+	  className: _react2.default.PropTypes.string,
+	  style: _react2.default.PropTypes.object,
+	  stickyClassName: _react2.default.PropTypes.string,
+	  stickyStyle: _react2.default.PropTypes.object,
+	  topOffset: _react2.default.PropTypes.number,
+	  bottomOffset: _react2.default.PropTypes.number,
+	  onStickyStateChange: _react2.default.PropTypes.func
+	};
+	Sticky.defaultProps = {
+	  isActive: true,
+	  className: '',
+	  style: {},
+	  stickyClassName: 'sticky',
+	  stickyStyle: {},
+	  topOffset: 0,
+	  bottomOffset: 0,
+	  onStickyStateChange: function onStickyStateChange() {}
+	};
+	Sticky.contextTypes = {
+	  'sticky-channel': _react2.default.PropTypes.any
+	};
+	exports.default = Sticky;
+	module.exports = exports['default'];
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _channel = __webpack_require__(240);
+
+	var _channel2 = _interopRequireDefault(_channel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Container = function (_React$Component) {
+	  _inherits(Container, _React$Component);
+
+	  function Container(props) {
+	    _classCallCheck(this, Container);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Container).call(this, props));
+
+	    _this.updateOffset = function (_ref) {
+	      var inherited = _ref.inherited;
+	      var offset = _ref.offset;
+
+	      _this.channel.update(function (data) {
+	        data.inherited = inherited + offset;
+	      });
+	    };
+
+	    _this.channel = new _channel2.default({ inherited: 0, offset: 0, node: null });
+	    return _this;
+	  }
+
+	  _createClass(Container, [{
+	    key: 'getChildContext',
+	    value: function getChildContext() {
+	      return { 'sticky-channel': this.channel };
+	    }
+	  }, {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var parentChannel = this.context['sticky-channel'];
+	      if (parentChannel) parentChannel.subscribe(this.updateOffset);
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var node = _reactDom2.default.findDOMNode(this);
+	      this.channel.update(function (data) {
+	        data.node = node;
+	      });
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.channel.update(function (data) {
+	        data.node = null;
+	      });
+
+	      var parentChannel = this.context['sticky-channel'];
+	      if (parentChannel) parentChannel.unsubscribe(this.updateOffset);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        this.props,
+	        this.props.children
+	      );
+	    }
+	  }]);
+
+	  return Container;
+	}(_react2.default.Component);
+
+	Container.contextTypes = {
+	  'sticky-channel': _react2.default.PropTypes.any
+	};
+	Container.childContextTypes = {
+	  'sticky-channel': _react2.default.PropTypes.any
+	};
+	exports.default = Container;
+	module.exports = exports['default'];
+
+/***/ },
+/* 240 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Channel = function Channel(data) {
+	  _classCallCheck(this, Channel);
+
+	  var listeners = [];
+	  data = data || {};
+
+	  this.subscribe = function (fn) {
+	    listeners.push(fn);
+	  };
+
+	  this.unsubscribe = function (fn) {
+	    var idx = listeners.indexOf(fn);
+	    if (idx !== -1) listeners.splice(idx, 1);
+	  };
+
+	  this.update = function (fn) {
+	    if (fn) fn(data);
+	    listeners.forEach(function (l) {
+	      return l(data);
+	    });
+	  };
+	};
+
+	exports.default = Channel;
+	module.exports = exports['default'];
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(242);
+
+/***/ },
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26453,8 +26962,8 @@
 
 	var React = __webpack_require__(3);
 
-	var ReactTransitionGroup = __webpack_require__(238);
-	var ReactCSSTransitionGroupChild = __webpack_require__(246);
+	var ReactTransitionGroup = __webpack_require__(243);
+	var ReactCSSTransitionGroupChild = __webpack_require__(251);
 
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -26537,7 +27046,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 238 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26561,8 +27070,8 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var React = __webpack_require__(3);
-	var ReactAddonsDOMDependencies = __webpack_require__(239);
-	var ReactTransitionChildMapping = __webpack_require__(244);
+	var ReactAddonsDOMDependencies = __webpack_require__(244);
+	var ReactTransitionChildMapping = __webpack_require__(249);
 
 	var emptyFunction = __webpack_require__(13);
 
@@ -26792,7 +27301,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 239 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26819,8 +27328,8 @@
 	};
 
 	if (process.env.NODE_ENV !== 'production') {
-	  var ReactPerf = __webpack_require__(240);
-	  var ReactTestUtils = __webpack_require__(241);
+	  var ReactPerf = __webpack_require__(245);
+	  var ReactTestUtils = __webpack_require__(246);
 
 	  exports.getReactPerf = function () {
 	    return ReactPerf;
@@ -26833,7 +27342,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 240 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27339,7 +27848,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 241 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27357,7 +27866,7 @@
 	var _prodInvariant = __webpack_require__(36),
 	    _assign = __webpack_require__(5);
 
-	var EventConstants = __webpack_require__(242);
+	var EventConstants = __webpack_require__(247);
 	var EventPluginHub = __webpack_require__(43);
 	var EventPluginRegistry = __webpack_require__(44);
 	var EventPropagators = __webpack_require__(42);
@@ -27368,7 +27877,7 @@
 	var ReactInstanceMap = __webpack_require__(117);
 	var ReactUpdates = __webpack_require__(57);
 	var SyntheticEvent = __webpack_require__(54);
-	var ReactShallowRenderer = __webpack_require__(243);
+	var ReactShallowRenderer = __webpack_require__(248);
 
 	var findDOMNode = __webpack_require__(173);
 	var invariant = __webpack_require__(9);
@@ -27756,7 +28265,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 242 */
+/* 247 */
 /***/ function(module, exports) {
 
 	/**
@@ -27852,7 +28361,7 @@
 	module.exports = EventConstants;
 
 /***/ },
-/* 243 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27992,7 +28501,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 244 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28007,7 +28516,7 @@
 
 	'use strict';
 
-	var flattenChildren = __webpack_require__(245);
+	var flattenChildren = __webpack_require__(250);
 
 	var ReactTransitionChildMapping = {
 	  /**
@@ -28100,7 +28609,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 245 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28181,7 +28690,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 246 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28197,10 +28706,10 @@
 	'use strict';
 
 	var React = __webpack_require__(3);
-	var ReactAddonsDOMDependencies = __webpack_require__(239);
+	var ReactAddonsDOMDependencies = __webpack_require__(244);
 
-	var CSSCore = __webpack_require__(247);
-	var ReactTransitionEvents = __webpack_require__(248);
+	var CSSCore = __webpack_require__(252);
+	var ReactTransitionEvents = __webpack_require__(253);
 
 	var onlyChild = __webpack_require__(32);
 
@@ -28352,7 +28861,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 247 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -28479,7 +28988,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 248 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28556,16 +29065,16 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 249 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(250);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(252)(content, {});
+	var update = __webpack_require__(257)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28582,21 +29091,21 @@
 	}
 
 /***/ },
-/* 250 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(251)();
+	exports = module.exports = __webpack_require__(256)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poiret+One);", ""]);
 
 	// module
-	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.navbar-default {\n  background-color: #D6451A;\n  border: none; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  background-color: #2BB7CE;\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 30px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #D6451A;\n  margin-top: 15px;\n  background-color: #2BB7CE;\n  border-color: #2E646D;\n  width: 125px; }\n\n.blake {\n  width: 75px;\n  margin-top: 35px;\n  border-radius: 10px;\n  box-shadow: 1px 1px 2px 2px rgba(234, 161, 108, 0.5); }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px; }\n\n.achievements a {\n  text-decoration: underline;\n  color: #fff; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  margin-top: -20px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 14px;\n  margin-top: -14px;\n  background-image: url(/images/jagged.png); }\n\n.second {\n  background-color: #E6F5F7;\n  color: #D6451A;\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #D6451A;\n  color: #fff;\n  padding-bottom: 20px; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(/images/bp-light-blue.png);\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px;\n    float: right; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .header,\n  .marketing,\n  .footer {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0px;\n    margin-top: 16px; } }\n", ""]);
+	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0px 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #D6451A;\n  margin-top: 15px;\n  background-color: #2BB7CE;\n  border-color: #2E646D;\n  width: 125px; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px; }\n\n.achievements a {\n  text-decoration: underline;\n  color: #fff; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  margin-top: -20px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  background-color: #E6F5F7;\n  color: #D6451A;\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(\"/images/bp-light-blue.png\");\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 251 */
+/* 256 */
 /***/ function(module, exports) {
 
 	/*
@@ -28652,7 +29161,7 @@
 
 
 /***/ },
-/* 252 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -28904,18 +29413,17 @@
 
 
 /***/ },
-/* 253 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _reactHeadroom = __webpack_require__(254);
-
 	var React = __webpack_require__(2);
-	var ReactCSSTransitionGroup = __webpack_require__(236);
-	__webpack_require__(249);
+	var PropTypes = React.PropTypes;
+	var ReactCSSTransitionGroup = __webpack_require__(241);
+	__webpack_require__(254);
 
-	var goat = __webpack_require__(263);
+	var goat = __webpack_require__(259);
 
 	var goatStyles = {
 	  float: "left",
@@ -28923,89 +29431,63 @@
 	  marginTop: "8px"
 	};
 
+	var mainStyle = {
+	  zIndex: "100"
+	};
+
 	var Header = function Header(props) {
 	  return React.createElement(
 	    'div',
-	    { className: 'main-container' },
+	    { className: 'main-container', style: mainStyle },
 	    React.createElement(
-	      _reactHeadroom.Headroom,
-	      null,
+	      'div',
+	      { className: props.headerClass, id: 'mainHeader' },
 	      React.createElement(
 	        'div',
-	        { className: 'header' },
+	        { className: 'navbar-default', role: 'navigation' },
 	        React.createElement(
 	          'div',
-	          { className: 'navbar-default', role: 'navigation' },
+	          { className: 'container' },
 	          React.createElement(
 	            'div',
-	            { className: 'container' },
+	            { className: 'logo' },
+	            React.createElement('img', { style: goatStyles, src: goat })
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: '' },
 	            React.createElement(
-	              'div',
-	              { className: 'navbar-header' },
-	              React.createElement('span', { className: 'bp-blue small' }),
+	              'ul',
+	              { className: 'nav navbar-nav' },
 	              React.createElement(
-	                'button',
-	                { className: 'navbar-toggle collapsed', 'data-target': '#js-navbar-collapse', 'data-toggle': 'collapse', type: 'button' },
+	                'li',
+	                null,
 	                React.createElement(
-	                  'span',
-	                  { className: 'sr-only' },
-	                  'Toggle navigation'
-	                ),
-	                React.createElement('span', { className: 'icon-bar' }),
-	                React.createElement('span', { className: 'icon-bar' }),
-	                React.createElement('span', { className: 'icon-bar' })
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'logo' },
-	              React.createElement('img', { style: goatStyles, src: goat })
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'collapse navbar-collapse', id: 'js-navbar-collapse' },
-	              React.createElement(
-	                'ul',
-	                { className: 'nav navbar-nav' },
-	                React.createElement(
-	                  'li',
-	                  null,
-	                  React.createElement(
-	                    'a',
-	                    { className: 'pointer' },
-	                    'Skills'
-	                  )
-	                ),
-	                React.createElement(
-	                  'li',
-	                  null,
-	                  React.createElement(
-	                    'a',
-	                    { className: 'pointer' },
-	                    'Achievements'
-	                  )
-	                ),
-	                React.createElement(
-	                  'li',
-	                  null,
-	                  React.createElement(
-	                    'a',
-	                    { className: 'pointer' },
-	                    'Find me'
-	                  )
-	                ),
-	                React.createElement(
-	                  'li',
-	                  null,
-	                  React.createElement(
-	                    'a',
-	                    { className: 'pointer' },
-	                    'Contact Me'
-	                  )
+	                  'a',
+	                  { className: 'pointer' },
+	                  'Achievements'
 	                )
 	              ),
-	              React.createElement('span', { className: 'bp-blue large' })
-	            )
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { className: 'pointer' },
+	                  'Find me'
+	                )
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { className: 'pointer' },
+	                  'Contact Me'
+	                )
+	              )
+	            ),
+	            React.createElement('span', { className: 'bp-blue large' })
 	          )
 	        )
 	      )
@@ -29013,1392 +29495,28 @@
 	  );
 	};
 
+	Header.propTypes = {
+	  headerClass: PropTypes.string
+	};
+
 	module.exports = Header;
 
 /***/ },
-/* 254 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _shallowequal = __webpack_require__(255);
-
-	var _shallowequal2 = _interopRequireDefault(_shallowequal);
-
-	var _raf = __webpack_require__(260);
-
-	var _raf2 = _interopRequireDefault(_raf);
-
-	var _shouldUpdate2 = __webpack_require__(262);
-
-	var _shouldUpdate3 = _interopRequireDefault(_shouldUpdate2);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // eslint-disable-line import/no-unresolved
-
-
-	var noop = function noop() {};
-
-	var Headroom = function (_Component) {
-	  _inherits(Headroom, _Component);
-
-	  function Headroom(props) {
-	    _classCallCheck(this, Headroom);
-
-	    // Class variables.
-	    var _this = _possibleConstructorReturn(this, (Headroom.__proto__ || Object.getPrototypeOf(Headroom)).call(this, props));
-
-	    _this.setHeightOffset = function () {
-	      _this.setState({
-	        height: _this.refs.inner.offsetHeight
-	      });
-	    };
-
-	    _this.getScrollY = function () {
-	      if (_this.props.parent().pageYOffset !== void 0) {
-	        return _this.props.parent().pageYOffset;
-	      } else if (_this.props.parent().scrollTop !== void 0) {
-	        return _this.props.parent().scrollTop;
-	      } else {
-	        return (document.documentElement || document.body.parentNode || document.body).scrollTop;
-	      }
-	    };
-
-	    _this.getViewportHeight = function () {
-	      return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-	    };
-
-	    _this.getDocumentHeight = function () {
-	      var body = document.body;
-	      var documentElement = document.documentElement;
-
-	      return Math.max(body.scrollHeight, documentElement.scrollHeight, body.offsetHeight, documentElement.offsetHeight, body.clientHeight, documentElement.clientHeight);
-	    };
-
-	    _this.getElementPhysicalHeight = function (elm) {
-	      return Math.max(elm.offsetHeight, elm.clientHeight);
-	    };
-
-	    _this.getElementHeight = function (elm) {
-	      return Math.max(elm.scrollHeight, elm.offsetHeight, elm.clientHeight);
-	    };
-
-	    _this.getScrollerPhysicalHeight = function () {
-	      var parent = _this.props.parent();
-
-	      return parent === window || parent === document.body ? _this.getViewportHeight() : _this.getElementPhysicalHeight(parent);
-	    };
-
-	    _this.getScrollerHeight = function () {
-	      var parent = _this.props.parent();
-
-	      return parent === window || parent === document.body ? _this.getDocumentHeight() : _this.getElementHeight(parent);
-	    };
-
-	    _this.isOutOfBound = function (currentScrollY) {
-	      var pastTop = currentScrollY < 0;
-
-	      var scrollerPhysicalHeight = _this.getScrollerPhysicalHeight();
-	      var scrollerHeight = _this.getScrollerHeight();
-
-	      var pastBottom = currentScrollY + scrollerPhysicalHeight > scrollerHeight;
-
-	      return pastTop || pastBottom;
-	    };
-
-	    _this.handleScroll = function () {
-	      if (!_this.ticking) {
-	        _this.ticking = true;
-	        (0, _raf2.default)(_this.update);
-	      }
-	    };
-
-	    _this.unpin = function () {
-	      _this.props.onUnpin();
-
-	      _this.setState({
-	        translateY: '-100%',
-	        className: 'headroom headroom--unpinned'
-	      }, function () {
-	        setTimeout(function () {
-	          _this.setState({ state: 'unpinned' });
-	        }, 0);
-	      });
-	    };
-
-	    _this.pin = function () {
-	      _this.props.onPin();
-
-	      _this.setState({
-	        translateY: 0,
-	        className: 'headroom headroom--pinned',
-	        state: 'pinned'
-	      });
-	    };
-
-	    _this.unfix = function () {
-	      _this.props.onUnfix();
-
-	      _this.setState({
-	        translateY: 0,
-	        className: 'headroom headroom--unfixed',
-	        state: 'unfixed'
-	      });
-	    };
-
-	    _this.update = function () {
-	      _this.currentScrollY = _this.getScrollY();
-
-	      if (!_this.isOutOfBound(_this.currentScrollY)) {
-	        var _shouldUpdate = (0, _shouldUpdate3.default)(_this.lastKnownScrollY, _this.currentScrollY, _this.props, _this.state);
-
-	        var action = _shouldUpdate.action;
-
-
-	        if (action === 'pin') {
-	          _this.pin();
-	        } else if (action === 'unpin') {
-	          _this.unpin();
-	        } else if (action === 'unfix') {
-	          _this.unfix();
-	        }
-	      }
-
-	      _this.lastKnownScrollY = _this.currentScrollY;
-	      _this.ticking = false;
-	    };
-
-	    _this.currentScrollY = 0;
-	    _this.lastKnownScrollY = 0;
-	    _this.ticking = false;
-	    _this.state = {
-	      state: 'unfixed',
-	      translateY: 0,
-	      className: 'headroom headroom--unfixed'
-	    };
-	    return _this;
-	  }
-
-	  _createClass(Headroom, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.setHeightOffset();
-	      if (!this.props.disable) {
-	        this.props.parent().addEventListener('scroll', this.handleScroll);
-	      }
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      if (nextProps.disable && !this.props.disable) {
-	        this.unfix();
-	        this.props.parent().removeEventListener('scroll', this.handleScroll);
-	      } else if (!nextProps.disable && this.props.disable) {
-	        this.props.parent().addEventListener('scroll', this.handleScroll);
-	      }
-	    }
-	  }, {
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(nextProps, nextState) {
-	      return !(0, _shallowequal2.default)(this.props, nextProps) || !(0, _shallowequal2.default)(this.state, nextState);
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps) {
-	      // If children have changed, remeasure height.
-	      if (prevProps.children !== this.props.children) {
-	        this.setHeightOffset();
-	      }
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      this.props.parent().removeEventListener('scroll', this.handleScroll);
-	      window.removeEventListener('scroll', this.handleScroll);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var divProps = _objectWithoutProperties(this.props, []);
-
-	      delete divProps.onUnpin;
-	      delete divProps.onPin;
-	      delete divProps.onUnfix;
-	      delete divProps.disableInlineStyles;
-	      delete divProps.disable;
-	      delete divProps.parent;
-	      delete divProps.children;
-	      delete divProps.upTolerance;
-	      delete divProps.downTolerance;
-	      delete divProps.pinStart;
-
-	      var style = divProps.style;
-	      var wrapperStyle = divProps.wrapperStyle;
-
-	      var rest = _objectWithoutProperties(divProps, ['style', 'wrapperStyle']);
-
-	      var innerStyle = {
-	        position: this.props.disable || this.state.state === 'unfixed' ? 'relative' : 'fixed',
-	        top: 0,
-	        left: 0,
-	        right: 0,
-	        zIndex: 1,
-	        WebkitTransform: 'translateY(' + this.state.translateY + ')',
-	        MsTransform: 'translateY(' + this.state.translateY + ')',
-	        transform: 'translateY(' + this.state.translateY + ')'
-	      };
-
-	      var className = this.state.className;
-
-	      // Don't add css transitions until after we've done the initial
-	      // negative transform when transitioning from 'unfixed' to 'unpinned'.
-	      // If we don't do this, the header will flash into view temporarily
-	      // while it transitions from 0 — -100%.
-	      if (this.state.state !== 'unfixed') {
-	        innerStyle = _extends({}, innerStyle, {
-	          WebkitTransition: 'all .2s ease-in-out',
-	          MozTransition: 'all .2s ease-in-out',
-	          OTransition: 'all .2s ease-in-out',
-	          transition: 'all .2s ease-in-out'
-	        });
-	        className += ' headroom--scrolled';
-	      }
-
-	      if (!this.props.disableInlineStyles) {
-	        innerStyle = _extends({}, innerStyle, style);
-	      } else {
-	        innerStyle = style;
-	      }
-
-	      var wrapperStyles = _extends({}, wrapperStyle, {
-	        height: this.state.height ? this.state.height : null
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { style: wrapperStyles, className: 'headroom-wrapper' },
-	        _react2.default.createElement(
-	          'div',
-	          _extends({
-	            ref: 'inner'
-	          }, rest, {
-	            style: innerStyle,
-	            className: className
-	          }),
-	          this.props.children
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Headroom;
-	}(_react.Component);
-
-	Headroom.propTypes = {
-	  parent: _react.PropTypes.func,
-	  children: _react.PropTypes.any.isRequired,
-	  disableInlineStyles: _react.PropTypes.bool,
-	  disable: _react.PropTypes.bool,
-	  upTolerance: _react.PropTypes.number,
-	  downTolerance: _react.PropTypes.number,
-	  onPin: _react.PropTypes.func,
-	  onUnpin: _react.PropTypes.func,
-	  onUnfix: _react.PropTypes.func,
-	  wrapperStyle: _react.PropTypes.object,
-	  pinStart: _react.PropTypes.number,
-	  style: _react.PropTypes.object
-	};
-	Headroom.defaultProps = {
-	  parent: function parent() {
-	    return window;
-	  },
-	  disableInlineStyles: false,
-	  disable: false,
-	  upTolerance: 5,
-	  downTolerance: 0,
-	  onPin: noop,
-	  onUnpin: noop,
-	  onUnfix: noop,
-	  wrapperStyle: {},
-	  pinStart: 0
-	};
-	exports.default = Headroom;
-
-/***/ },
-/* 255 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var fetchKeys = __webpack_require__(256);
-
-	module.exports = function shallowEqual(objA, objB, compare, compareContext) {
-
-	    var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
-
-	    if (ret !== void 0) {
-	        return !!ret;
-	    }
-
-	    if (objA === objB) {
-	        return true;
-	    }
-
-	    if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
-	        return false;
-	    }
-
-	    var keysA = fetchKeys(objA);
-	    var keysB = fetchKeys(objB);
-
-	    var len = keysA.length;
-	    if (len !== keysB.length) {
-	        return false;
-	    }
-
-	    compareContext = compareContext || null;
-
-	    // Test for A's keys different from B.
-	    var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
-	    for (var i = 0; i < len; i++) {
-	        var key = keysA[i];
-	        if (!bHasOwnProperty(key)) {
-	            return false;
-	        }
-	        var valueA = objA[key];
-	        var valueB = objB[key];
-
-	        var _ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
-	        if (_ret === false || _ret === void 0 && valueA !== valueB) {
-	            return false;
-	        }
-	    }
-
-	    return true;
-	};
-
-/***/ },
-/* 256 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * lodash 3.1.2 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modern modularize exports="npm" -o ./`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-	var getNative = __webpack_require__(257),
-	    isArguments = __webpack_require__(258),
-	    isArray = __webpack_require__(259);
-
-	/** Used to detect unsigned integer values. */
-	var reIsUint = /^\d+$/;
-
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/* Native method references for those with the same name as other `lodash` methods. */
-	var nativeKeys = getNative(Object, 'keys');
-
-	/**
-	 * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
-	 * of an array-like value.
-	 */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-
-	/**
-	 * The base implementation of `_.property` without support for deep paths.
-	 *
-	 * @private
-	 * @param {string} key The key of the property to get.
-	 * @returns {Function} Returns the new function.
-	 */
-	function baseProperty(key) {
-	  return function(object) {
-	    return object == null ? undefined : object[key];
-	  };
-	}
-
-	/**
-	 * Gets the "length" property value of `object`.
-	 *
-	 * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
-	 * that affects Safari on at least iOS 8.1-8.3 ARM64.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {*} Returns the "length" value.
-	 */
-	var getLength = baseProperty('length');
-
-	/**
-	 * Checks if `value` is array-like.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
-	 */
-	function isArrayLike(value) {
-	  return value != null && isLength(getLength(value));
-	}
-
-	/**
-	 * Checks if `value` is a valid array-like index.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
-	 */
-	function isIndex(value, length) {
-	  value = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
-	  length = length == null ? MAX_SAFE_INTEGER : length;
-	  return value > -1 && value % 1 == 0 && value < length;
-	}
-
-	/**
-	 * Checks if `value` is a valid array-like length.
-	 *
-	 * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
-	 */
-	function isLength(value) {
-	  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-	}
-
-	/**
-	 * A fallback implementation of `Object.keys` which creates an array of the
-	 * own enumerable property names of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 */
-	function shimKeys(object) {
-	  var props = keysIn(object),
-	      propsLength = props.length,
-	      length = propsLength && object.length;
-
-	  var allowIndexes = !!length && isLength(length) &&
-	    (isArray(object) || isArguments(object));
-
-	  var index = -1,
-	      result = [];
-
-	  while (++index < propsLength) {
-	    var key = props[index];
-	    if ((allowIndexes && isIndex(key, length)) || hasOwnProperty.call(object, key)) {
-	      result.push(key);
-	    }
-	  }
-	  return result;
-	}
-
-	/**
-	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
-	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(1);
-	 * // => false
-	 */
-	function isObject(value) {
-	  // Avoid a V8 JIT bug in Chrome 19-20.
-	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
-	}
-
-	/**
-	 * Creates an array of the own enumerable property names of `object`.
-	 *
-	 * **Note:** Non-object values are coerced to objects. See the
-	 * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
-	 * for more details.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 *   this.b = 2;
-	 * }
-	 *
-	 * Foo.prototype.c = 3;
-	 *
-	 * _.keys(new Foo);
-	 * // => ['a', 'b'] (iteration order is not guaranteed)
-	 *
-	 * _.keys('hi');
-	 * // => ['0', '1']
-	 */
-	var keys = !nativeKeys ? shimKeys : function(object) {
-	  var Ctor = object == null ? undefined : object.constructor;
-	  if ((typeof Ctor == 'function' && Ctor.prototype === object) ||
-	      (typeof object != 'function' && isArrayLike(object))) {
-	    return shimKeys(object);
-	  }
-	  return isObject(object) ? nativeKeys(object) : [];
-	};
-
-	/**
-	 * Creates an array of the own and inherited enumerable property names of `object`.
-	 *
-	 * **Note:** Non-object values are coerced to objects.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 *   this.b = 2;
-	 * }
-	 *
-	 * Foo.prototype.c = 3;
-	 *
-	 * _.keysIn(new Foo);
-	 * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
-	 */
-	function keysIn(object) {
-	  if (object == null) {
-	    return [];
-	  }
-	  if (!isObject(object)) {
-	    object = Object(object);
-	  }
-	  var length = object.length;
-	  length = (length && isLength(length) &&
-	    (isArray(object) || isArguments(object)) && length) || 0;
-
-	  var Ctor = object.constructor,
-	      index = -1,
-	      isProto = typeof Ctor == 'function' && Ctor.prototype === object,
-	      result = Array(length),
-	      skipIndexes = length > 0;
-
-	  while (++index < length) {
-	    result[index] = (index + '');
-	  }
-	  for (var key in object) {
-	    if (!(skipIndexes && isIndex(key, length)) &&
-	        !(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
-	      result.push(key);
-	    }
-	  }
-	  return result;
-	}
-
-	module.exports = keys;
-
-
-/***/ },
-/* 257 */
-/***/ function(module, exports) {
-
-	/**
-	 * lodash 3.9.1 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modern modularize exports="npm" -o ./`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-
-	/** `Object#toString` result references. */
-	var funcTag = '[object Function]';
-
-	/** Used to detect host constructors (Safari > 5). */
-	var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-	/**
-	 * Checks if `value` is object-like.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the decompiled source of functions. */
-	var fnToString = Function.prototype.toString;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objToString = objectProto.toString;
-
-	/** Used to detect if a method is native. */
-	var reIsNative = RegExp('^' +
-	  fnToString.call(hasOwnProperty).replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
-	  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-	);
-
-	/**
-	 * Gets the native function at `key` of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @param {string} key The key of the method to get.
-	 * @returns {*} Returns the function if it's native, else `undefined`.
-	 */
-	function getNative(object, key) {
-	  var value = object == null ? undefined : object[key];
-	  return isNative(value) ? value : undefined;
-	}
-
-	/**
-	 * Checks if `value` is classified as a `Function` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-	 * @example
-	 *
-	 * _.isFunction(_);
-	 * // => true
-	 *
-	 * _.isFunction(/abc/);
-	 * // => false
-	 */
-	function isFunction(value) {
-	  // The use of `Object#toString` avoids issues with the `typeof` operator
-	  // in older versions of Chrome and Safari which return 'function' for regexes
-	  // and Safari 8 equivalents which return 'object' for typed array constructors.
-	  return isObject(value) && objToString.call(value) == funcTag;
-	}
-
-	/**
-	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
-	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(1);
-	 * // => false
-	 */
-	function isObject(value) {
-	  // Avoid a V8 JIT bug in Chrome 19-20.
-	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
-	}
-
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
-	 * @example
-	 *
-	 * _.isNative(Array.prototype.push);
-	 * // => true
-	 *
-	 * _.isNative(_);
-	 * // => false
-	 */
-	function isNative(value) {
-	  if (value == null) {
-	    return false;
-	  }
-	  if (isFunction(value)) {
-	    return reIsNative.test(fnToString.call(value));
-	  }
-	  return isObjectLike(value) && reIsHostCtor.test(value);
-	}
-
-	module.exports = getNative;
-
-
-/***/ },
-/* 258 */
-/***/ function(module, exports) {
-
-	/**
-	 * lodash (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modularize exports="npm" -o ./`
-	 * Copyright jQuery Foundation and other contributors <https://jquery.org/>
-	 * Released under MIT license <https://lodash.com/license>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 */
-
-	/** Used as references for various `Number` constants. */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-
-	/** `Object#toString` result references. */
-	var argsTag = '[object Arguments]',
-	    funcTag = '[object Function]',
-	    genTag = '[object GeneratorFunction]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/** Built-in value references. */
-	var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-
-	/**
-	 * Checks if `value` is likely an `arguments` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isArguments(function() { return arguments; }());
-	 * // => true
-	 *
-	 * _.isArguments([1, 2, 3]);
-	 * // => false
-	 */
-	function isArguments(value) {
-	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-	  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
-	    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-	}
-
-	/**
-	 * Checks if `value` is array-like. A value is considered array-like if it's
-	 * not a function and has a `value.length` that's an integer greater than or
-	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
-	 * @example
-	 *
-	 * _.isArrayLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArrayLike(document.body.children);
-	 * // => true
-	 *
-	 * _.isArrayLike('abc');
-	 * // => true
-	 *
-	 * _.isArrayLike(_.noop);
-	 * // => false
-	 */
-	function isArrayLike(value) {
-	  return value != null && isLength(value.length) && !isFunction(value);
-	}
-
-	/**
-	 * This method is like `_.isArrayLike` except that it also checks if `value`
-	 * is an object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an array-like object,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isArrayLikeObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArrayLikeObject(document.body.children);
-	 * // => true
-	 *
-	 * _.isArrayLikeObject('abc');
-	 * // => false
-	 *
-	 * _.isArrayLikeObject(_.noop);
-	 * // => false
-	 */
-	function isArrayLikeObject(value) {
-	  return isObjectLike(value) && isArrayLike(value);
-	}
-
-	/**
-	 * Checks if `value` is classified as a `Function` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a function, else `false`.
-	 * @example
-	 *
-	 * _.isFunction(_);
-	 * // => true
-	 *
-	 * _.isFunction(/abc/);
-	 * // => false
-	 */
-	function isFunction(value) {
-	  // The use of `Object#toString` avoids issues with the `typeof` operator
-	  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-	  var tag = isObject(value) ? objectToString.call(value) : '';
-	  return tag == funcTag || tag == genTag;
-	}
-
-	/**
-	 * Checks if `value` is a valid array-like length.
-	 *
-	 * **Note:** This method is loosely based on
-	 * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
-	 * @example
-	 *
-	 * _.isLength(3);
-	 * // => true
-	 *
-	 * _.isLength(Number.MIN_VALUE);
-	 * // => false
-	 *
-	 * _.isLength(Infinity);
-	 * // => false
-	 *
-	 * _.isLength('3');
-	 * // => false
-	 */
-	function isLength(value) {
-	  return typeof value == 'number' &&
-	    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-	}
-
-	/**
-	 * Checks if `value` is the
-	 * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
-	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(_.noop);
-	 * // => true
-	 *
-	 * _.isObject(null);
-	 * // => false
-	 */
-	function isObject(value) {
-	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
-	}
-
-	/**
-	 * Checks if `value` is object-like. A value is object-like if it's not `null`
-	 * and has a `typeof` result of "object".
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 * @example
-	 *
-	 * _.isObjectLike({});
-	 * // => true
-	 *
-	 * _.isObjectLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObjectLike(_.noop);
-	 * // => false
-	 *
-	 * _.isObjectLike(null);
-	 * // => false
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-
-	module.exports = isArguments;
-
-
-/***/ },
 /* 259 */
-/***/ function(module, exports) {
-
-	/**
-	 * lodash 3.0.4 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modern modularize exports="npm" -o ./`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-
-	/** `Object#toString` result references. */
-	var arrayTag = '[object Array]',
-	    funcTag = '[object Function]';
-
-	/** Used to detect host constructors (Safari > 5). */
-	var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-	/**
-	 * Checks if `value` is object-like.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the decompiled source of functions. */
-	var fnToString = Function.prototype.toString;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objToString = objectProto.toString;
-
-	/** Used to detect if a method is native. */
-	var reIsNative = RegExp('^' +
-	  fnToString.call(hasOwnProperty).replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
-	  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-	);
-
-	/* Native method references for those with the same name as other `lodash` methods. */
-	var nativeIsArray = getNative(Array, 'isArray');
-
-	/**
-	 * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
-	 * of an array-like value.
-	 */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-
-	/**
-	 * Gets the native function at `key` of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @param {string} key The key of the method to get.
-	 * @returns {*} Returns the function if it's native, else `undefined`.
-	 */
-	function getNative(object, key) {
-	  var value = object == null ? undefined : object[key];
-	  return isNative(value) ? value : undefined;
-	}
-
-	/**
-	 * Checks if `value` is a valid array-like length.
-	 *
-	 * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
-	 */
-	function isLength(value) {
-	  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-	}
-
-	/**
-	 * Checks if `value` is classified as an `Array` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-	 * @example
-	 *
-	 * _.isArray([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArray(function() { return arguments; }());
-	 * // => false
-	 */
-	var isArray = nativeIsArray || function(value) {
-	  return isObjectLike(value) && isLength(value.length) && objToString.call(value) == arrayTag;
-	};
-
-	/**
-	 * Checks if `value` is classified as a `Function` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-	 * @example
-	 *
-	 * _.isFunction(_);
-	 * // => true
-	 *
-	 * _.isFunction(/abc/);
-	 * // => false
-	 */
-	function isFunction(value) {
-	  // The use of `Object#toString` avoids issues with the `typeof` operator
-	  // in older versions of Chrome and Safari which return 'function' for regexes
-	  // and Safari 8 equivalents which return 'object' for typed array constructors.
-	  return isObject(value) && objToString.call(value) == funcTag;
-	}
-
-	/**
-	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
-	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(1);
-	 * // => false
-	 */
-	function isObject(value) {
-	  // Avoid a V8 JIT bug in Chrome 19-20.
-	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
-	}
-
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
-	 * @example
-	 *
-	 * _.isNative(Array.prototype.push);
-	 * // => true
-	 *
-	 * _.isNative(_);
-	 * // => false
-	 */
-	function isNative(value) {
-	  if (value == null) {
-	    return false;
-	  }
-	  if (isFunction(value)) {
-	    return reIsNative.test(fnToString.call(value));
-	  }
-	  return isObjectLike(value) && reIsHostCtor.test(value);
-	}
-
-	module.exports = isArray;
-
-
-/***/ },
-/* 260 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {var now = __webpack_require__(261)
-	  , root = typeof window === 'undefined' ? global : window
-	  , vendors = ['moz', 'webkit']
-	  , suffix = 'AnimationFrame'
-	  , raf = root['request' + suffix]
-	  , caf = root['cancel' + suffix] || root['cancelRequest' + suffix]
-
-	for(var i = 0; !raf && i < vendors.length; i++) {
-	  raf = root[vendors[i] + 'Request' + suffix]
-	  caf = root[vendors[i] + 'Cancel' + suffix]
-	      || root[vendors[i] + 'CancelRequest' + suffix]
-	}
-
-	// Some versions of FF have rAF but not cAF
-	if(!raf || !caf) {
-	  var last = 0
-	    , id = 0
-	    , queue = []
-	    , frameDuration = 1000 / 60
-
-	  raf = function(callback) {
-	    if(queue.length === 0) {
-	      var _now = now()
-	        , next = Math.max(0, frameDuration - (_now - last))
-	      last = next + _now
-	      setTimeout(function() {
-	        var cp = queue.slice(0)
-	        // Clear queue here to prevent
-	        // callbacks from appending listeners
-	        // to the current frame's queue
-	        queue.length = 0
-	        for(var i = 0; i < cp.length; i++) {
-	          if(!cp[i].cancelled) {
-	            try{
-	              cp[i].callback(last)
-	            } catch(e) {
-	              setTimeout(function() { throw e }, 0)
-	            }
-	          }
-	        }
-	      }, Math.round(next))
-	    }
-	    queue.push({
-	      handle: ++id,
-	      callback: callback,
-	      cancelled: false
-	    })
-	    return id
-	  }
-
-	  caf = function(handle) {
-	    for(var i = 0; i < queue.length; i++) {
-	      if(queue[i].handle === handle) {
-	        queue[i].cancelled = true
-	      }
-	    }
-	  }
-	}
-
-	module.exports = function(fn) {
-	  // Wrap in a new function to prevent
-	  // `cancel` potentially being assigned
-	  // to the native rAF function
-	  return raf.call(root, fn)
-	}
-	module.exports.cancel = function() {
-	  caf.apply(root, arguments)
-	}
-	module.exports.polyfill = function() {
-	  root.requestAnimationFrame = raf
-	  root.cancelAnimationFrame = caf
-	}
-
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 261 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.7.1
-	(function() {
-	  var getNanoSeconds, hrtime, loadTime;
-
-	  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
-	    module.exports = function() {
-	      return performance.now();
-	    };
-	  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
-	    module.exports = function() {
-	      return (getNanoSeconds() - loadTime) / 1e6;
-	    };
-	    hrtime = process.hrtime;
-	    getNanoSeconds = function() {
-	      var hr;
-	      hr = hrtime();
-	      return hr[0] * 1e9 + hr[1];
-	    };
-	    loadTime = getNanoSeconds();
-	  } else if (Date.now) {
-	    module.exports = function() {
-	      return Date.now() - loadTime;
-	    };
-	    loadTime = Date.now();
-	  } else {
-	    module.exports = function() {
-	      return new Date().getTime() - loadTime;
-	    };
-	    loadTime = new Date().getTime();
-	  }
-
-	}).call(this);
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 262 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	exports.default = function () {
-	  var lastKnownScrollY = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 0;
-	  var currentScrollY = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
-	  var props = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-	  var state = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
-
-	  var scrollDirection = currentScrollY >= lastKnownScrollY ? 'down' : 'up';
-	  var distanceScrolled = Math.abs(currentScrollY - lastKnownScrollY);
-
-	  // We're at the top and not fixed yet.
-	  if (currentScrollY <= props.pinStart && state.state !== 'unfixed') {
-	    return {
-	      action: 'unfix',
-	      scrollDirection: scrollDirection,
-	      distanceScrolled: distanceScrolled
-	    };
-	    // We're unfixed and headed down. Carry on.
-	  } else if (currentScrollY <= state.height && scrollDirection === 'down' && state.state === 'unfixed') {
-	    return {
-	      action: 'none',
-	      scrollDirection: scrollDirection,
-	      distanceScrolled: distanceScrolled
-	    };
-	    // We're past the header and scrolling down.
-	    // We transition to "unpinned" if necessary.
-	  } else if (scrollDirection === 'down' && ['pinned', 'unfixed'].indexOf(state.state) >= 0 && currentScrollY > state.height + props.pinStart && distanceScrolled > props.downTolerance) {
-	    return {
-	      action: 'unpin',
-	      scrollDirection: scrollDirection,
-	      distanceScrolled: distanceScrolled
-	    };
-	    // We're scrolling up, we transition to "pinned"
-	  } else if (scrollDirection === 'up' && distanceScrolled > props.upTolerance && ['pinned', 'unfixed'].indexOf(state.state) < 0) {
-	    return {
-	      action: 'pin',
-	      scrollDirection: scrollDirection,
-	      distanceScrolled: distanceScrolled
-	    };
-	    // We're scrolling up, and inside the header.
-	    // We transition to pin regardless of upTolerance
-	  } else if (scrollDirection === 'up' && currentScrollY <= state.height && ['pinned', 'unfixed'].indexOf(state.state) < 0) {
-	    return {
-	      action: 'pin',
-	      scrollDirection: scrollDirection,
-	      distanceScrolled: distanceScrolled
-	    };
-	  } else {
-	    return {
-	      action: 'none',
-	      scrollDirection: scrollDirection,
-	      distanceScrolled: distanceScrolled
-	    };
-	  }
-	};
-
-/***/ },
-/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "58b21e5590ac1f0c6f43085db5117a6f.svg";
 
 /***/ },
-/* 264 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
-	var ReactCSSTransitionGroup = __webpack_require__(236);
+	var ReactCSSTransitionGroup = __webpack_require__(241);
+
+	var shredderImg = __webpack_require__(261);
 
 	var Achievements = function Achievements(props) {
 	  return React.createElement(
@@ -30408,15 +29526,11 @@
 	      'div',
 	      { className: 'container' },
 	      React.createElement(
-	        'h3',
+	        'h2',
 	        { className: 'cursive', id: 'achievements' },
-	        'Achievements'
+	        'Blake Parkinson'
 	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'sub' },
-	        'Places I\'ve worked. Things I\'ve done'
-	      ),
+	      React.createElement('img', { className: 'shredder', src: shredderImg }),
 	      React.createElement(
 	        'ul',
 	        null,
@@ -30479,27 +29593,36 @@
 	module.exports = Achievements;
 
 /***/ },
-/* 265 */
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "aa837539f4631ea448de57a2b7ad1bf2.png";
+
+/***/ },
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
-	var Home = __webpack_require__(266);
+	var Home = __webpack_require__(263);
 
 	var HomeContainer = React.createClass({
 	  displayName: 'HomeContainer',
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      typewriter: ''
+	      typewriter: '',
+	      opacity: 0
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
+	    var _this = this;
 
 	    var content = "Hi I'm Blake, a software engineer and designer.";
 	    var write = '';
 	    var i = 0;
+	    var opacity = 0.00;
 	    setInterval(function () {
 	      if (i < content.length) {
 	        write = write.replace('|', '');
@@ -30514,28 +29637,54 @@
 	        });
 	      }
 	    }.bind(this), 100);
+
+	    var opacityInterval = setInterval(function () {
+	      if (opacity < 1) {
+	        opacity = opacity + .01;
+	      } else {
+	        clearInterval(opacityInterval);
+	      }
+	      _this.setState({
+	        opacity: opacity
+	      });
+	    }, 50);
 	  },
 	  render: function render() {
-	    return React.createElement(Home, { typewriter: this.state.typewriter });
+	    return React.createElement(Home, { typewriter: this.state.typewriter, opacity: this.state.opacity });
 	  }
 	});
 
 	module.exports = HomeContainer;
 
 /***/ },
-/* 266 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
 	var PropTypes = React.PropTypes;
-	var Achievements = __webpack_require__(264);
-	var Find = __webpack_require__(267);
-	var Contact = __webpack_require__(268);
+	var Achievements = __webpack_require__(260);
+	var Find = __webpack_require__(264);
+	var Contact = __webpack_require__(265);
+
+	var typewriterStyle = {
+	  color: "#333333",
+	  fontFamily: "'Special Elite', cursive"
+	};
 
 	function Home(props) {
-	  var img = __webpack_require__(269);
+	  var img = __webpack_require__(266);
+	  var jaggedImg = __webpack_require__(267);
+	  var jagged = {
+	    backgroundImage: 'url(' + jaggedImg + ')'
+	  };
+
+	  var picStyle = {
+	    opacity: props.opacity
+	  };
+
+	  var shredderImg = __webpack_require__(261);
 
 	  return React.createElement(
 	    'div',
@@ -30543,14 +29692,14 @@
 	    React.createElement(
 	      'div',
 	      { className: 'intro-row' },
-	      React.createElement('img', { className: 'blake', src: img }),
+	      React.createElement('img', { className: 'blake', src: img, style: picStyle }),
 	      React.createElement(
 	        'div',
-	        { className: 'intro' },
+	        { className: 'intro', style: typewriterStyle },
 	        props.typewriter
 	      )
 	    ),
-	    React.createElement('div', { className: 'jagged' }),
+	    React.createElement('div', { className: 'jagged', style: jagged }),
 	    React.createElement(Achievements, null),
 	    React.createElement(Find, null),
 	    React.createElement(Contact, null)
@@ -30558,13 +29707,14 @@
 	}
 
 	Home.propTypes = {
-	  typerwriter: PropTypes.string
+	  typerwriter: PropTypes.string,
+	  opacity: PropTypes.number
 	};
 
 	module.exports = Home;
 
 /***/ },
-/* 267 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30641,7 +29791,7 @@
 	module.exports = Find;
 
 /***/ },
-/* 268 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30705,10 +29855,16 @@
 	module.exports = Contact;
 
 /***/ },
-/* 269 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "97042e2b23e203e8837a9b50011e2951.jpg";
+	module.exports = __webpack_require__.p + "30cb759c47997ee67ad40088a60f30c1.png";
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "388002178103c8ce68d8afefb7b513d8.png";
 
 /***/ }
 /******/ ]);

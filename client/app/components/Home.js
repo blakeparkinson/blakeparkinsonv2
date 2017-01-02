@@ -13,10 +13,15 @@ var typewriterStyle = {
 
 function Home (props) {
   var img = require('../images/blake.png');
+  var jaggedImg = require('../images/jagged-black.png');
+  var jagged = {
+    backgroundImage: 'url('+jaggedImg+')'
+  };
 
   var picStyle = {
     opacity: props.opacity
-  }
+  };
+
 
   return (
     <div>
@@ -24,7 +29,7 @@ function Home (props) {
       <img className="blake" src={img} style={picStyle}/>
       <div className="intro" style={typewriterStyle}>{props.typewriter}</div>
     </div>
-    <div className="jagged"></div>
+    <div className="jagged" style={jagged}></div>
     <Achievements/>
     <Find/>
     <Contact/>
