@@ -19,7 +19,6 @@ var MainContainer = React.createClass({
   handleScroll: function(event){
 
     var headerHeight = document.getElementById('mainHeader').clientHeight;
-    console.log(headerHeight);
     var top  = window.pageYOffset || document.documentElement.scrollTop;
     if (top > headerHeight + 50){
       if (top < previousTop){
@@ -32,11 +31,6 @@ var MainContainer = React.createClass({
           headerClass: 'fadeOut animated'
         });
       }
-    }
-    else{
-      this.setState({
-        headerClass: 'fadeIn animated'
-      });
     }
     previousTop = top;
 
