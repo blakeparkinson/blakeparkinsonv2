@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Achievements = require('./Achievements');
 var Find = require('./Find');
+var Resume = require('./Resume');
 var Contact = require('./Contact');
 
 var typewriterStyle = {
@@ -31,6 +32,7 @@ function Home (props) {
     </div>
     <div className="jagged" style={jagged}></div>
     <Achievements/>
+    <Resume/>
     <Find/>
     <Contact/>
     </div>

@@ -37,7 +37,7 @@ var Header = props => (
           <a className="pointer">ABOUT</a>
         </li>
         <li>
-          <a className="pointer">FIND</a>
+          <a className="pointer">RESUME</a>
         </li>
         <li>
           <a className="pointer">CONTACT</a>

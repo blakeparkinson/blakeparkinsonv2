@@ -29099,7 +29099,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poiret+One);", ""]);
 
 	// module
-	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0px 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #D6451A;\n  margin-top: 15px;\n  background-color: #2BB7CE;\n  border-color: #2E646D;\n  width: 125px; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px; }\n\n.achievements a {\n  text-decoration: underline;\n  color: #fff; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  margin-top: -20px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  background-color: #E6F5F7;\n  color: #D6451A;\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(\"/images/bp-light-blue.png\");\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n", ""]);
+	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0px 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #D6451A;\n  margin-top: 15px;\n  background-color: #2BB7CE;\n  border-color: #2E646D;\n  width: 125px; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px; }\n\n.achievements a {\n  text-decoration: underline;\n  color: #fff; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  margin-top: -20px; }\n\n.shredder {\n  text-align: center; }\n  .shredder img {\n    border-radius: 300px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center;\n    margin: 50px 0; }\n\n.text-container {\n  padding: 30px;\n  font-size: 18px; }\n\n.mid-text {\n  margin: 30px 0; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(\"/images/bp-light-blue.png\");\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n", ""]);
 
 	// exports
 
@@ -29465,7 +29465,7 @@
 	                React.createElement(
 	                  'a',
 	                  { className: 'pointer' },
-	                  'Achievements'
+	                  'ABOUT'
 	                )
 	              ),
 	              React.createElement(
@@ -29474,7 +29474,7 @@
 	                React.createElement(
 	                  'a',
 	                  { className: 'pointer' },
-	                  'Find me'
+	                  'RESUME'
 	                )
 	              ),
 	              React.createElement(
@@ -29483,7 +29483,7 @@
 	                React.createElement(
 	                  'a',
 	                  { className: 'pointer' },
-	                  'Contact Me'
+	                  'CONTACT'
 	                )
 	              )
 	            ),
@@ -29530,60 +29530,28 @@
 	        { className: 'cursive', id: 'achievements' },
 	        'Blake Parkinson'
 	      ),
-	      React.createElement('img', { className: 'shredder', src: shredderImg }),
 	      React.createElement(
-	        'ul',
-	        null,
+	        'div',
+	        { className: 'shredder' },
+	        React.createElement('img', { src: shredderImg })
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'text-container' },
 	        React.createElement(
-	          'li',
-	          { className: 'col-sm-12 col-md-4 list edmodo achievements' },
-	          React.createElement('img', { className: 'edmodo-img', src: '/images/edmodo.png' }),
-	          React.createElement(
-	            'span',
-	            { className: 'onehalf-x' },
-	            'Edmodo'
-	          ),
-	          React.createElement(
-	            'div',
-	            null,
-	            'I worked at Edmodo, where I worked on various projects from the backend API to front end landing pages'
-	          )
+	          'div',
+	          null,
+	          ' I\'m a full stack engineer, part time designer that has worked on a variety of tech stacks. I have a wide range of experience ranging from architecting large scale web apps building and developing apps for the google play and iTunes store.'
 	        ),
 	        React.createElement(
-	          'li',
-	          { className: 'col-sm-12 col-md-4 list achievements fonts' },
-	          React.createElement('i', { className: 'fa fa-bolt three-x' }),
-	          React.createElement(
-	            'span',
-	            { className: 'onehalf-x' },
-	            'RosterBlitz'
-	          ),
-	          React.createElement(
-	            'div',
-	            null,
-	            'I founded',
-	            React.createElement(
-	              'a',
-	              { href: 'https://www.rosterblitz.com' },
-	              'RosterBlitz'
-	            ),
-	            ', the premier sports quizzing website on the internet.'
-	          )
+	          'div',
+	          { className: 'mid-text' },
+	          'I\'ve worked with Node.js, python, PHP, ruby, golang, and a little java and objective c for app development.'
 	        ),
 	        React.createElement(
-	          'li',
-	          { className: 'col-sm-12 col-md-4 list achievements fonts' },
-	          React.createElement('i', { className: 'fa fa-building three-x' }),
-	          React.createElement(
-	            'span',
-	            { className: 'onehalf-x' },
-	            'NCTI'
-	          ),
-	          React.createElement(
-	            'div',
-	            null,
-	            'I worked at NCTI where I built a beautiful node/angular app from scratch.'
-	          )
+	          'div',
+	          null,
+	          ' My passion lies in front-end and design and I\'ve used Angular, Backbone, and put emphasis on user experience when choosing front-end frameworks.'
 	        )
 	      )
 	    )
@@ -29684,8 +29652,6 @@
 	    opacity: props.opacity
 	  };
 
-	  var shredderImg = __webpack_require__(261);
-
 	  return React.createElement(
 	    'div',
 	    null,
@@ -29701,6 +29667,7 @@
 	    ),
 	    React.createElement('div', { className: 'jagged', style: jagged }),
 	    React.createElement(Achievements, null),
+	    React.createElement(Resume, null),
 	    React.createElement(Find, null),
 	    React.createElement(Contact, null)
 	  );
