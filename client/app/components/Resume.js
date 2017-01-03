@@ -11,27 +11,27 @@ var Resume = props => (
 
     <ul>
       <li className="row list edmodo achievements">
-      <div className="col-xs-6">
+      <div className="col">
         <img className="edmodo-img" src={edmodoImg}/>
-        <span className="onehalf-x">Edmodo</span>
-      </div>
-        <div className="col-xs-6">I worked at Edmodo, where I worked on various projects from the backend API to front end landing pages</div>
-      </li>
-      <li className="row list achievements">
-      <div className="col-xs-6">
-
-      <img className="alpine-img" src={alpineImg}/>
-        <span className="onehalf-x">Alpine Labs</span>
+        <div className="onehalf-x">Edmodo</div>
+        <div>I worked at Edmodo, where I worked on various projects from the backend API to front end landing pages</div>
         </div>
-        <div className="col-xs-6">I worked at NCTI where I built a beautiful node/angular app from scratch.</div>
       </li>
       <li className="row list achievements">
-      <div className="col-xs-6">
+      <div className="col">
+      <img className="alpine-img" src={alpineImg}/>
+        <div className="onehalf-x">Alpine Labs</div>
+        <div>I worked at NCTI where I built a beautiful node/angular app from scratch.</div>
+        </div>
+      </li>
+      <li className="row list achievements">
+      <div className="col">
 
       <img className="ncti-img" src={nctiImg}/>
-        <span className="onehalf-x">NCTI</span>
-      </div>
-        <div className="col-xs-6">I worked at NCTI where I built a beautiful node/angular app from scratch.</div>
+        <div className="onehalf-x">NCTI</div>
+        <div>I worked at NCTI where I built a beautiful node/angular app from scratch.</div>
+        </div>
+
       </li>
     </ul>
   </div>
