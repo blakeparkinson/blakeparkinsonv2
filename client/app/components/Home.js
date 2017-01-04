@@ -1,7 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var Achievements = require('./Achievements');
-var Find = require('./Find');
 var Resume = require('./Resume');
 var Contact = require('./Contact');
 
@@ -33,7 +32,6 @@ function Home (props) {
     <div className="jagged" style={jagged}></div>
     <Achievements/>
     <Resume/>
-    <Find/>
     <Contact/>
     </div>
   )

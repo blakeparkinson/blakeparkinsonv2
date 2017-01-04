@@ -4,9 +4,10 @@ html {
     background-color: #E6F5F7;
 }
 
-.sticky{
-  z-index: 2;
+.sticky {
+    z-index: 2;
 }
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -24,15 +25,32 @@ body {
     color: #77797b;
 }
 
+.icon-img{
+  width: 90px;
+}
+
+.find-me{
+  padding: 30px;
+}
+
+.icon-img-small{
+  width: 65px;
+}
+
+.list{
+  display: inline-block;
+}
+
 .navbar-default {
-  .navbar-nav{
-    float: right;
-  }
+    .navbar-nav {
+        float: right;
+    }
+
     .container {
         width: inherit;
     }
     background-color: #333333;
-    box-shadow: 0px 3px 3px #c0c0c0;
+    box-shadow: 0 3px 3px #c0c0c0;
     border: none;
 
     .navbar-nav > li > a {
@@ -116,11 +134,8 @@ body {
 .achievements {
     div {
         margin-top: 10px;
-    }
-
-    a {
-        text-decoration: underline;
-        color: #fff;
+        font-size: 18px;
+        color: #000000;
     }
 
     &.fonts {
@@ -129,21 +144,23 @@ body {
 }
 
 .edmodo-img {
-width: 55px;
-}
-.ncti-img{
-  width: 125px;
+    width: 55px;
 }
 
-.achievements{
-  margin-bottom: 40px;
+.ncti-img {
+    width: 125px;
 }
 
-.shredder{
-  text-align: center;
-  img{
-    border-radius: 300px;
-  }
+.achievements {
+    margin-bottom: 40px;
+}
+
+.shredder {
+    text-align: center;
+
+    img {
+        border-radius: 300px;
+    }
 }
 
 .container-narrow > hr {
@@ -163,19 +180,20 @@ width: 55px;
     background-color: #333333;
     color: #fff;
     padding-bottom: 20px;
-    h2{
-      text-align: center;
-      margin: 50px 0;
+
+    h2 {
+        text-align: center;
+        margin: 50px 0;
     }
 }
 
-.text-container{
-  padding: 30px;
-  font-size: 18px;
+.text-container {
+    padding: 30px;
+    font-size: 20px;
 }
 
-.mid-text{
-  margin: 30px 0;
+.mid-text {
+    margin: 30px 0;
 }
 
 .cursive {
@@ -240,6 +258,20 @@ width: 55px;
     .intro {
         font-size: 20px;
     }
+
+    .icon-img{
+      width: 45px;
+    }
+
+    .find-me{
+      padding: 20px;
+    }
+
+    .icon-img-small{
+      width: 32.5px;
+    }
+
+
 }
 @media screen and (max-width: 768px) {
     .small {

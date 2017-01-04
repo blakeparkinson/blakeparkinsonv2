@@ -1,5 +1,8 @@
 var React = require('react');
 
+var Find = require('./Find');
+
+
 
 var Contact = props => (
   <div className="third">
@@ -20,6 +23,8 @@ var Contact = props => (
         </div>
       </form>
     </ul>
+    <Find/>
+
   </div>
 </div>
 )

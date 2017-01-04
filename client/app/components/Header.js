@@ -3,10 +3,7 @@ var PropTypes = React.PropTypes;
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 require('../main.scss');
 
-
-
 var goat = require('../images/goat.svg');
-
 
 var goatStyles = {
   float: "left",
