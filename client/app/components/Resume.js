@@ -7,20 +7,21 @@ var nctiImg = require('../images/ncti.png');
 
 
 var Resume = props => (
-  <div>
+  <div className="container">
 
     <ul>
+      <h1 className="text-center">Places I've worked</h1>
       <li className="row list edmodo achievements">
       <div className="col">
         <img className="edmodo-img" src={edmodoImg}/>
-        <div className="onehalf-x">Edmodo</div>
+        <h2>Edmodo</h2>
         <div>I worked at Edmodo, where I worked on various projects from the backend API to front end landing pages</div>
         </div>
       </li>
       <li className="row list achievements">
       <div className="col">
       <img className="alpine-img" src={alpineImg}/>
-        <div className="onehalf-x">Alpine Labs</div>
+        <h2>Alpine Labs</h2>
         <div>I worked at NCTI where I built a beautiful node/angular app from scratch.</div>
         </div>
       </li>
@@ -28,7 +29,7 @@ var Resume = props => (
       <div className="col">
 
       <img className="ncti-img" src={nctiImg}/>
-        <div className="onehalf-x">NCTI</div>
+        <h2>NCTI</h2>
         <div>I worked at NCTI where I built a beautiful node/angular app from scratch.</div>
         </div>
 
