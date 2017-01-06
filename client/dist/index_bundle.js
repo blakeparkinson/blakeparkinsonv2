@@ -29099,7 +29099,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poiret+One);", ""]);
 
 	// module
-	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0px 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #D6451A;\n  margin-top: 15px;\n  background-color: #2BB7CE;\n  border-color: #2E646D;\n  width: 125px; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px; }\n\n.achievements a {\n  text-decoration: underline;\n  color: #fff; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  margin-top: -20px; }\n\n.shredder {\n  text-align: center; }\n  .shredder img {\n    border-radius: 300px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center;\n    margin: 50px 0; }\n\n.text-container {\n  padding: 30px;\n  font-size: 18px; }\n\n.mid-text {\n  margin: 30px 0; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(\"/images/bp-light-blue.png\");\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n", ""]);
+	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.icon-img {\n  width: 90px; }\n\n.find-me {\n  padding: 30px; }\n\n.icon-img-small {\n  width: 65px; }\n\n.list {\n  display: inline-block; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #D6451A;\n  margin-top: 15px;\n  background-color: #2BB7CE;\n  border-color: #2E646D;\n  width: 125px; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px;\n  font-size: 18px;\n  color: #000000; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  width: 55px; }\n\n.ncti-img {\n  width: 125px; }\n\n.achievements {\n  margin-bottom: 40px; }\n\n.shredder {\n  text-align: center; }\n  .shredder img {\n    border-radius: 300px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center;\n    margin: 50px 0; }\n\n.text-container {\n  padding: 30px;\n  font-size: 20px; }\n\n.mid-text {\n  margin: 30px 0; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(\"/images/bp-light-blue.png\");\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; }\n  .icon-img {\n    width: 45px; }\n  .find-me {\n    padding: 20px; }\n  .icon-img-small {\n    width: 32.5px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n", ""]);
 
 	// exports
 
@@ -29633,8 +29633,8 @@
 	var React = __webpack_require__(2);
 	var PropTypes = React.PropTypes;
 	var Achievements = __webpack_require__(260);
-	var Find = __webpack_require__(264);
-	var Contact = __webpack_require__(265);
+	var Resume = __webpack_require__(264);
+	var ContactContainer = __webpack_require__(268);
 
 	var typewriterStyle = {
 	  color: "#333333",
@@ -29642,8 +29642,8 @@
 	};
 
 	function Home(props) {
-	  var img = __webpack_require__(266);
-	  var jaggedImg = __webpack_require__(267);
+	  var img = __webpack_require__(274);
+	  var jaggedImg = __webpack_require__(275);
 	  var jagged = {
 	    backgroundImage: 'url(' + jaggedImg + ')'
 	  };
@@ -29668,8 +29668,7 @@
 	    React.createElement('div', { className: 'jagged', style: jagged }),
 	    React.createElement(Achievements, null),
 	    React.createElement(Resume, null),
-	    React.createElement(Find, null),
-	    React.createElement(Contact, null)
+	    React.createElement(ContactContainer, null)
 	  );
 	}
 
@@ -29684,72 +29683,337 @@
 /* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(2);
+	var ReactCSSTransitionGroup = __webpack_require__(241);
 
-	var Find = function Find(props) {
+	var edmodoImg = __webpack_require__(265);
+	var alpineImg = __webpack_require__(266);
+	var nctiImg = __webpack_require__(267);
+
+	var Resume = function Resume(props) {
 	  return React.createElement(
-	    "div",
-	    { className: "second" },
+	    'div',
+	    { className: 'container' },
 	    React.createElement(
-	      "div",
-	      { className: "container contact" },
+	      'ul',
+	      null,
 	      React.createElement(
-	        "h3",
-	        { className: "cursive", id: "find" },
-	        "Find me"
+	        'h1',
+	        { className: 'text-center' },
+	        'Places I\'ve worked'
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "sub" },
-	        "Links and stuff"
+	        'li',
+	        { className: 'row list edmodo achievements' },
+	        React.createElement(
+	          'div',
+	          { className: 'col' },
+	          React.createElement('img', { className: 'edmodo-img', src: edmodoImg }),
+	          React.createElement(
+	            'h2',
+	            null,
+	            React.createElement(
+	              'a',
+	              { href: 'https://www.edmodo.com/' },
+	              'Edmodo'
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            null,
+	            'I worked at Edmodo, one of the primary communication platforms for K-12 schools. At Edmodo, I worked on various projects from the backend API to front end landing pages. I was one of the highest code contributors to the main ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://www.edmodo.com/' },
+	              'Edmodo platform'
+	            ),
+	            ' ,worked on ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://snapshot.edmodo.com/' },
+	              'Edmodo Snapshot'
+	            ),
+	            ' (a common core mastery platform), as well as the ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://developers.edmodo.com/' },
+	              'Partner API platform'
+	            ),
+	            '.'
+	          )
+	        )
 	      ),
 	      React.createElement(
-	        "ul",
+	        'li',
+	        { className: 'row list achievements' },
+	        React.createElement(
+	          'div',
+	          { className: 'col' },
+	          React.createElement('img', { className: 'alpine-img', src: alpineImg }),
+	          React.createElement(
+	            'h2',
+	            null,
+	            React.createElement(
+	              'a',
+	              { href: 'https://alpinelaboratories.com/' },
+	              'Alpine Labs'
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            null,
+	            'I\'m the mobile developer at Alpine Labs, where we make photography tech gear. I architected, built, and designed the ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://itunes.apple.com/us/app/pulse-camera-control/id1093969356?mt=8' },
+	              'Pulse app'
+	            ),
+	            ' and worked on the ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://itunes.apple.com/us/app/radian/id593206526?mt=8' },
+	              'Radian App'
+	            ),
+	            '. Both apps allow you to wireless control your camera from your phone or tablet.'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'li',
+	        { className: 'row list achievements' },
+	        React.createElement(
+	          'div',
+	          { className: 'col' },
+	          React.createElement('img', { className: 'ncti-img', src: nctiImg }),
+	          React.createElement(
+	            'h2',
+	            null,
+	            React.createElement(
+	              'a',
+	              { href: 'https://ncti.com/' },
+	              'NCTI'
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            null,
+	            'I also work at NCTI, where I architected, designed, and built the ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://amp.ncti.com/' },
+	              'Amp Platform'
+	            ),
+	            '. With this platform, we transformed 20 years of technical debt, into a modern, responsive, and lean platform.'
+	          )
+	        )
+	      )
+	    )
+	  );
+	};
+
+	module.exports = Resume;
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "d7555de1cdc9fe0ac2686cbc96f5fb9f.png";
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "be5eea917340799eca2d443312889599.png";
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "6ab8fb9d982e6e42ddf8a52deab07fdd.png";
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+	var Main = __webpack_require__(236);
+
+	var Contact = __webpack_require__(269);
+
+	var previousTop;
+
+	var ContactContainer = React.createClass({
+	  displayName: 'ContactContainer',
+
+	  getInitialState: function getInitialState() {
+	    return { subject: null,
+	      text: null,
+	      response: null
+	    };
+	  },
+	  handleChange: function handleChange(event) {
+	    if (event.target.id == 'email') {
+	      this.state.email = event.target.value;
+	    } else {
+	      this.state.text = event.target.value;
+	    }
+	  },
+
+	  submitForm: function submitForm(event) {
+	    var _this = this;
+
+	    var data = {
+	      'sender': this.state.email,
+	      'textBody': this.state.text
+	    };
+
+	    $.ajax({
+	      url: 'https://blakeparkinson.herokuapp.com/main/email',
+	      type: 'POST',
+	      dataType: 'json',
+	      data: data,
+	      cache: false,
+	      success: function (_success) {
+	        function success(_x) {
+	          return _success.apply(this, arguments);
+	        }
+
+	        success.toString = function () {
+	          return _success.toString();
+	        };
+
+	        return success;
+	      }(function (data) {
+	        console.log(data);
+	        if ('err' in data) {
+	          _this.setState({ response: data.err });
+	        } else {
+	          _this.setState({ response: success });
+	        }
+	      }),
+	      error: function error(xhr, status, err) {
+	        console.error(err);
+	      }
+	    });
+	  },
+
+	  render: function render() {
+	    return React.createElement(Contact, { handleChange: this.handleChange, submitForm: this.submitForm });
+	  }
+	});
+
+	module.exports = ContactContainer;
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+	var PropTypes = React.PropTypes;
+
+	var Find = __webpack_require__(270);
+
+	var Contact = function Contact(props) {
+	  return React.createElement(
+	    'div',
+	    { className: 'third' },
+	    React.createElement(
+	      'div',
+	      { className: 'container contact' },
+	      React.createElement(
+	        'h3',
+	        { className: 'cursive', id: 'info' },
+	        'Contact Me'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'sub' },
+	        'I do web development, play soccer with you, babysit your kids. Message me and let\'s chat!'
+	      ),
+	      React.createElement(
+	        'ul',
 	        null,
 	        React.createElement(
-	          "li",
-	          { className: "col-sm-12 col-md-4 list " },
-	          React.createElement("i", { className: "fa fa-github-alt three-x" }),
+	          'form',
+	          { name: 'email' },
 	          React.createElement(
-	            "span",
-	            { className: "onehalf-x" },
+	            'div',
+	            { className: 'form-group' },
 	            React.createElement(
-	              "a",
-	              { href: "https://www.github.com/blakeparkinson/", target: "_blank" },
-	              "GitHub"
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "li",
-	          { className: "col-sm-12 col-md-4 list" },
-	          React.createElement("i", { className: "fa fa-linkedin three-x" }),
-	          React.createElement(
-	            "span",
-	            { className: "onehalf-x" },
+	              'label',
+	              { className: 'control-label' },
+	              'Your email.'
+	            ),
+	            React.createElement('input', { className: 'form-control email', name: 'email', id: 'email', onChange: props.handleChange, required: true }),
 	            React.createElement(
-	              "a",
-	              { href: "https://www.linkedin.com/in/bparky", target: "_blank" },
-	              "LinkedIn"
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "li",
-	          { className: "col-sm-12 col-md-4 list" },
-	          React.createElement("i", { className: "fa fa-facebook three-x" }),
-	          React.createElement(
-	            "span",
-	            { className: "onehalf-x" },
+	              'div',
+	              null,
+	              React.createElement(
+	                'label',
+	                { className: 'control-label' },
+	                'What\'s up?'
+	              )
+	            ),
+	            React.createElement('textarea', { className: 'form-control', id: 'text', onChange: props.handleChange }),
 	            React.createElement(
-	              "a",
-	              { href: "https://www.facebook.com/blakeparkinson", target: "_blank" },
-	              "Facebook"
+	              'div',
+	              { className: 'btn btn-warning', onClick: props.submitForm },
+	              'Send'
 	            )
 	          )
 	        )
+	      ),
+	      React.createElement(Find, null)
+	    )
+	  );
+	};
+
+	Contact.propTypes = {
+	  handleChange: PropTypes.func,
+	  submitForm: PropTypes.func
+	};
+
+	module.exports = Contact;
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+
+	var gitImg = __webpack_require__(271);
+	var linkedinImg = __webpack_require__(272);
+	var angelImg = __webpack_require__(273);
+
+	var Find = function Find(props) {
+	  return React.createElement(
+	    'div',
+	    { className: 'second' },
+	    React.createElement(
+	      'div',
+	      { className: 'contact text-center' },
+	      React.createElement(
+	        'a',
+	        { className: 'find-me', href: 'https://www.github.com/blakeparkinson/', target: '_blank' },
+	        React.createElement('img', { className: 'icon-img', src: gitImg })
+	      ),
+	      React.createElement(
+	        'a',
+	        { className: 'find-me', href: 'https://www.linkedin.com/in/bparky', target: '_blank' },
+	        React.createElement('img', { className: 'icon-img', src: linkedinImg })
+	      ),
+	      React.createElement(
+	        'a',
+	        { className: 'find-me', href: 'https://angel.co/blake-parkinson', target: '_blank' },
+	        React.createElement('img', { className: 'icon-img-small', src: angelImg })
 	      )
 	    )
 	  );
@@ -29758,77 +30022,31 @@
 	module.exports = Find;
 
 /***/ },
-/* 265 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	var React = __webpack_require__(2);
-
-	var Contact = function Contact(props) {
-	  return React.createElement(
-	    "div",
-	    { className: "third" },
-	    React.createElement(
-	      "div",
-	      { className: "container contact" },
-	      React.createElement(
-	        "h3",
-	        { className: "cursive", id: "info" },
-	        "Contact Me"
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "sub" },
-	        "I do web development, play soccer with you, babysit your kids. Message me and let's chat!"
-	      ),
-	      React.createElement(
-	        "ul",
-	        null,
-	        React.createElement(
-	          "form",
-	          { name: "email" },
-	          React.createElement(
-	            "div",
-	            { className: "form-group" },
-	            React.createElement(
-	              "label",
-	              { className: "control-label" },
-	              "Your email."
-	            ),
-	            React.createElement("input", { className: "form-control email", name: "email", required: true }),
-	            React.createElement(
-	              "div",
-	              null,
-	              React.createElement(
-	                "label",
-	                { className: "control-label" },
-	                "What's up?"
-	              )
-	            ),
-	            React.createElement("textarea", { className: "form-control" }),
-	            React.createElement(
-	              "div",
-	              { className: "btn btn-warning" },
-	              "Send"
-	            )
-	          )
-	        )
-	      )
-	    )
-	  );
-	};
-
-	module.exports = Contact;
+	module.exports = __webpack_require__.p + "8f65afcebd21b18f3d5a4caa129aff4e.png";
 
 /***/ },
-/* 266 */
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "5cd7c8d7b9ac3412e68181dc2ab0e7f9.png";
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "48990dfe50ac83668bfed56297756f4f.png";
+
+/***/ },
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "30cb759c47997ee67ad40088a60f30c1.png";
 
 /***/ },
-/* 267 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "388002178103c8ce68d8afefb7b513d8.png";

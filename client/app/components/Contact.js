@@ -19,7 +19,7 @@ var Contact = props => (
           </div>
 
           <textarea className="form-control" id="text" onChange={props.handleChange} ></textarea>
-          <div className="btn btn-warning">Send</div>
+          <div className="btn btn-warning" onClick={props.submitForm}>Send</div>
         </div>
       </form>
     </ul>
@@ -30,7 +30,8 @@ var Contact = props => (
 )
 
 Contact.propTypes = {
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  submitForm: PropTypes.func
 }
 
 module.exports = Contact;
