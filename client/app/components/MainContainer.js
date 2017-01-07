@@ -23,12 +23,12 @@ var MainContainer = React.createClass({
     if (top > headerHeight + 50){
       if (top < previousTop){
         this.setState({
-          headerClass: 'fadeIn animated'
+          headerClass: 'slideInDown animated'
         });
       }
       else{
         this.setState({
-          headerClass: 'fadeOut animated'
+          headerClass: 'slideOutUp animated'
         });
       }
     }
