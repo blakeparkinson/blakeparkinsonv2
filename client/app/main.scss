@@ -26,7 +26,7 @@ body {
 }
 
 .icon-img{
-  width: 90px;
+  width: 60px;
 }
 
 .find-me{
@@ -34,7 +34,7 @@ body {
 }
 
 .icon-img-small{
-  width: 65px;
+  width: 43px;
 }
 
 .list{
@@ -114,11 +114,14 @@ body {
 
 .btn-warning {
     margin-top: 15px;
-    background-color: #D6451A;
+    background-color: #5f8be5;
     margin-top: 15px;
-    background-color: #2BB7CE;
     border-color: #2E646D;
     width: 125px;
+    &:hover{
+      background-color: #2f61c6;
+      border-color: #2f61c6;
+    }
 }
 
 .blake {
@@ -135,6 +138,7 @@ body {
     div {
         margin-top: 10px;
         font-size: 18px;
+        margin-right: 10px;
         color: #000000;
     }
 
@@ -205,6 +209,7 @@ body {
 }
 
 .contact {
+      margin-right: 16px;
     a {
         color: inherit;
     }

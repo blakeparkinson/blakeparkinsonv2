@@ -9,7 +9,6 @@ var Contact = props => (
   <div className="container contact">
     <h3 className="cursive" id="info">Contact Me</h3>
     <div className="sub">I do web development, play soccer with you, babysit your kids. Message me and let's chat!</div>
-    <ul>
       <form name="email">
         <div className="form-group">
           <label className="control-label">Your email.</label>
@@ -19,11 +18,12 @@ var Contact = props => (
           </div>
 
           <textarea className="form-control" id="text" onChange={props.handleChange} ></textarea>
-          <div className="btn btn-warning" onClick={props.submitForm}>Send</div>
+          <div className="text-center">
+            <div className="btn btn-warning" onClick={props.submitForm}>Send</div>
+          </div>
         </div>
       </form>
-    </ul>
-    <Find/>
+      <Find/>
 
   </div>
 </div>
