@@ -12,7 +12,9 @@ var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={MainContainer}>
       <IndexRoute component={HomeContainer}/>
+      <Route path='*' component={HomeContainer} />
     </Route>
+
   </Router>
 );
 

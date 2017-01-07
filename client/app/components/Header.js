@@ -31,13 +31,13 @@ var Header = props => (
 
       <ul className="nav navbar-nav">
         <li>
-          <a className="pointer">ABOUT</a>
+          <a className="pointer" href="#about">ABOUT</a>
         </li>
         <li>
-          <a className="pointer">RESUME</a>
+          <a className="pointer" href="#resume">RESUME</a>
         </li>
         <li>
-          <a className="pointer">CONTACT</a>
+          <a className="pointer" href="#contact">CONTACT</a>
         </li>
       </ul>
       <span className="bp-blue large"></span>

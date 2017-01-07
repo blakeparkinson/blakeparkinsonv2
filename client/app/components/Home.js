@@ -25,7 +25,7 @@ function Home (props) {
 
   return (
     <div>
-    <div className="intro-row">
+    <div className="intro-row" id="about">
       <img className="blake" src={img} style={picStyle}/>
       <div className="intro" style={typewriterStyle}>{props.typewriter}</div>
     </div>

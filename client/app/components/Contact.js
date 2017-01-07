@@ -5,7 +5,7 @@ var Find = require('./Find');
 
 
 var Contact = props => (
-  <div className="third">
+  <div className="third" id="contact">
   <div className="container contact">
     <h3 className="cursive" id="info">Contact Me</h3>
     <div className="sub">I do web development, play soccer with you, babysit your kids. Message me and let's chat!</div>
