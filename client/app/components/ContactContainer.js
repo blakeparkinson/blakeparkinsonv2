@@ -8,24 +8,35 @@ var previousTop;
 
 var ContactContainer = React.createClass({
   getInitialState: function() {
-    return { subject: null,
-      text: null,
-      response: null
+    return { formItems : {email: '',
+      bodyText: '',
+      response: null}
     };
   },
   handleChange: function(event){
     if (event.target.id =='email'){
-      this.state.email = event.target.value;
+      this.setState({
+        formItems: {
+          email : event.target.value,
+          bodyText: this.state.formItems.bodyText
+        }
+      });
     }
     else{
-      this.state.text = event.target.value;
+      this.setState({
+        formItems:{
+          bodyText: event.target.value,
+          email: this.state.formItems.email
+        }
+      });
     }
+    console.log(this.state);
   },
 
   submitForm: function(event){
     var data = {
-      'sender': this.state.email,
-      'textBody': this.state.text
+      'sender': this.state.formItems.email,
+      'textBody': this.state.formItems.bodyText
     };
 
     $.ajax({
@@ -35,12 +46,11 @@ var ContactContainer = React.createClass({
      data: data,
      cache: false,
      success: (data) => {
-       console.log(data);
-       if ('err' in data) {
-         this.setState({response: data.err});
-       } else {
-         this.setState({response: data.success });
-       }
+       this.setState({formItems: {
+         email: '',
+         bodyText: '',
+         response: 'Thanks for your email! I will get back to you soon.'
+       }});
      },
      error: (xhr, status, err) => {
        console.error(err);
@@ -50,7 +60,7 @@ var ContactContainer = React.createClass({
 
   render: function () {
     return (
-      <Contact handleChange={this.handleChange} submitForm={this.submitForm}/>
+      <Contact handleChange={this.handleChange} submitForm={this.submitForm} formItems={this.state.formItems}/>
     )
   }
 });

@@ -12,14 +12,17 @@ var Contact = props => (
       <form name="email">
         <div className="form-group">
           <label className="control-label">Your email.</label>
-          <input className="form-control email" name="email" id="email" onChange={props.handleChange} required/>
+          <input className="form-control email" name="email" id="email" value={props.formItems.email} onChange={props.handleChange} required/>
           <div>
             <label className="control-label">What's up?</label>
           </div>
 
-          <textarea className="form-control" id="text" onChange={props.handleChange} ></textarea>
+          <textarea className="form-control" id="text" value={props.formItems.bodyText} onChange={props.handleChange} ></textarea>
           <div className="text-center">
-            <div className="btn btn-warning" onClick={props.submitForm}>Send</div>
+          { !props.formItems.response ?
+            <div className="btn btn-warning" onClick={props.submitForm}>Send</div> :
+            <div className="ajax-response">{props.formItems.response}</div>
+          }
           </div>
         </div>
       </form>
@@ -31,7 +34,9 @@ var Contact = props => (
 
 Contact.propTypes = {
   handleChange: PropTypes.func,
-  submitForm: PropTypes.func
+  submitForm: PropTypes.func,
+  formItems: PropTypes.object
+
 }
 
 module.exports = Contact;

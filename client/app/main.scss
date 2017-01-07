@@ -222,9 +222,11 @@ body {
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #FFFFFF !important;
 }
-
+.ajax-response{
+  margin-top: 20px;
+font-size: 20px;
+}
 .bp-blue {
-    background-image: url("/images/bp-light-blue.png");
     height: 50px;
     margin: 0;
     width: 7%;
