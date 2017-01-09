@@ -8,7 +8,7 @@ var Contact = props => (
   <div className="third" id="contact">
   <div className="container contact">
     <h3 className="cursive" id="info">Contact Me</h3>
-    <div className="sub">I do web development, play soccer with you, babysit your kids. Message me and let's chat!</div>
+    <div className="sub">I'm a great developer, undefeated U5 soccer coach, and Mario Party champion. Drop me a line and let's chat.</div>
       <form name="email">
         <div className="form-group">
           <label className="control-label">Your email.</label>
