@@ -25,20 +25,61 @@ body {
     color: #77797b;
 }
 
-.icon-img{
-  width: 60px;
+.contact {
+    margin-top: 50px;
 }
 
-.find-me{
-  padding: 30px;
+.icon-img {
+    width: 60px;
+
+    &.middle {
+        margin: 0 20px;
+    }
+
+    &.linkedin {
+        background: url('images/linkedin.png');
+        background-size: 60px;
+        background-repeat: no-repeat;
+        &:hover {
+            background: url('images/linkedin-blue.png');
+            background-size: 60px;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &.git {
+        background: url('images/github.png');
+        background-size: 60px;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background: url('images/github-blue.png');
+            background-size: 60px;
+            background-repeat: no-repeat;
+        }
+    }
 }
 
-.icon-img-small{
-  width: 43px;
+.find-me {
+    padding: 30px;
 }
 
-.list{
-  display: inline-block;
+.icon-img-small {
+    &.angel {
+        background: url('images/angel.png');
+        background-size: 43px;
+        background-repeat: no-repeat;
+        &:hover{
+          background: url('images/angel-blue.png');
+          background-size: 43px;
+          background-repeat: no-repeat;
+        }
+    }
+    width: 43px;
+}
+
+.list {
+    display: inline-block;
 }
 
 .navbar-default {
@@ -118,9 +159,10 @@ body {
     margin-top: 15px;
     border-color: #2E646D;
     width: 125px;
-    &:hover{
-      background-color: #2f61c6;
-      border-color: #2f61c6;
+
+    &:hover {
+        background-color: #2f61c6;
+        border-color: #2f61c6;
     }
 }
 
@@ -209,7 +251,6 @@ body {
 }
 
 .contact {
-      margin-right: 16px;
     a {
         color: inherit;
     }
@@ -222,10 +263,12 @@ body {
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #FFFFFF !important;
 }
-.ajax-response{
-  margin-top: 20px;
-font-size: 20px;
+
+.ajax-response {
+    margin-top: 20px;
+    font-size: 20px;
 }
+
 .bp-blue {
     height: 50px;
     margin: 0;
@@ -266,19 +309,19 @@ font-size: 20px;
         font-size: 20px;
     }
 
-    .icon-img{
-      width: 45px;
+    .icon-img {
+        width: 45px;
+        background-size: 35px !important;
     }
 
-    .find-me{
-      padding: 20px;
+    .find-me {
+        padding: 20px;
     }
 
-    .icon-img-small{
-      width: 32.5px;
+    .icon-img-small {
+        width: 32.5px;
+        background-size: 25px !important;
     }
-
-
 }
 @media screen and (max-width: 768px) {
     .small {

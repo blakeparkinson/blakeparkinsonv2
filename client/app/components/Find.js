@@ -1,21 +1,14 @@
 var React = require('react');
-
-
-var gitImg = require('../images/github.png');
-var linkedinImg = require('../images/linkedin.png');
-var angelImg = require('../images/angel.png');
+var PropTypes = React.PropTypes;
 
 var Find = props => (
   <div className="second">
   <div className="contact text-center">
-      <a className="find-me" href="https://www.github.com/blakeparkinson/" target="_blank">
-        <img className="icon-img" src={gitImg}/>
+      <a className="find-me icon-img git" href="https://www.github.com/blakeparkinson/" target="_blank">
       </a>
-      <a className="find-me" href="https://www.linkedin.com/in/bparky" target="_blank">
-        <img className="icon-img" src={linkedinImg}/>
+      <a className="find-me icon-img linkedin middle" href="https://www.linkedin.com/in/bparky" target="_blank">
       </a>
-      <a className="find-me" href="https://angel.co/blake-parkinson" target="_blank">
-        <img className="icon-img-small" src={angelImg}/>
+      <a className="find-me icon-img-small angel" href="https://angel.co/blake-parkinson" target="_blank">
       </a>
 
   </div>

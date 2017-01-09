@@ -1,7 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-var Find = require('./Find');
+var FindContainer = require('./FindContainer');
 
 
 var Contact = props => (
@@ -26,7 +26,7 @@ var Contact = props => (
           </div>
         </div>
       </form>
-      <Find/>
+      <FindContainer/>
 
   </div>
 </div>
