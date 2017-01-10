@@ -2,10 +2,11 @@
   "name": "blakeparkinson.com",
   "version": "1.0.0",
   "description": "blakeparkinson site",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "production": "webpack -p"
+    "start": "node server/server.js",
+    "production": "webpack -p",
+    "webpack": "webpack-dev-server"
   },
   "author": "blakeparkinson",
   "license": "ISC",
