@@ -21,16 +21,14 @@ var MainContainer = React.createClass({
     var headerHeight = document.getElementById('mainHeader').clientHeight;
     var top  = window.pageYOffset || document.documentElement.scrollTop;
     if (top > headerHeight + 50){
-      if (top < previousTop){
-        this.setState({
-          headerClass: 'slideInDown animated'
-        });
-      }
-      else{
-        this.setState({
-          headerClass: 'slideOutUp animated'
-        });
-      }
+      this.setState({
+        headerClass: 'slideOutUp animated'
+      });
+    }
+    else{
+      this.setState({
+         headerClass: 'slideInDown animated'
+       });
     }
     previousTop = top;
 
