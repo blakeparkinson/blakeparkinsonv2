@@ -1,4 +1,5 @@
 // required modules
+var newrelic = require('newrelic');
 
 var express = require('express');
 var path = require('path');

@@ -21479,7 +21479,7 @@
 	var hashHistory = ReactRouter.hashHistory;
 	var IndexRoute = ReactRouter.IndexRoute;
 	var MainContainer = __webpack_require__(235);
-	var HomeContainer = __webpack_require__(262);
+	var HomeContainer = __webpack_require__(268);
 
 	var routes = React.createElement(
 	  Router,
@@ -21487,7 +21487,8 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: MainContainer },
-	    React.createElement(IndexRoute, { component: HomeContainer })
+	    React.createElement(IndexRoute, { component: HomeContainer }),
+	    React.createElement(Route, { path: '*', component: HomeContainer })
 	  )
 	);
 
@@ -26459,8 +26460,8 @@
 	var PropTypes = React.PropTypes;
 	var ReactCSSTransitionGroup = __webpack_require__(241);
 	__webpack_require__(254);
-	var Header = __webpack_require__(258);
-	var Achievements = __webpack_require__(260);
+	var Header = __webpack_require__(264);
+	var Achievements = __webpack_require__(266);
 
 
 	var Main = function Main(props) {
@@ -29074,7 +29075,7 @@
 	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(257)(content, {});
+	var update = __webpack_require__(263)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -29099,7 +29100,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poiret+One);", ""]);
 
 	// module
-	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.icon-img {\n  width: 60px; }\n\n.find-me {\n  padding: 30px; }\n\n.icon-img-small {\n  width: 43px; }\n\n.list {\n  display: inline-block; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #5f8be5;\n  margin-top: 15px;\n  border-color: #2E646D;\n  width: 125px; }\n  .btn-warning:hover {\n    background-color: #2f61c6;\n    border-color: #2f61c6; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px;\n  font-size: 18px;\n  margin-right: 10px;\n  color: #000000; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  width: 55px; }\n\n.ncti-img {\n  width: 125px; }\n\n.achievements {\n  margin-bottom: 40px; }\n\n.shredder {\n  text-align: center; }\n  .shredder img {\n    border-radius: 300px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center;\n    margin: 50px 0; }\n\n.text-container {\n  padding: 30px;\n  font-size: 20px; }\n\n.mid-text {\n  margin: 30px 0; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact {\n  margin-right: 16px; }\n  .contact a {\n    color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.bp-blue {\n  background-image: url(\"/images/bp-light-blue.png\");\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; }\n  .icon-img {\n    width: 45px; }\n  .find-me {\n    padding: 20px; }\n  .icon-img-small {\n    width: 32.5px; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n", ""]);
+	exports.push([module.id, "html {\n  background-color: #E6F5F7; }\n\n.sticky {\n  z-index: 2; }\n\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0; }\n\n.pointer {\n  cursor: pointer; }\n\nbody {\n  padding: 0;\n  font-family: 'Poiret One', cursive;\n  color: #77797b; }\n\n.contact {\n  margin-top: 50px; }\n\n.icon-img {\n  width: 60px; }\n  .icon-img.middle {\n    margin: 0 20px; }\n  .icon-img.linkedin {\n    background: url(" + __webpack_require__(257) + ");\n    background-size: 60px;\n    background-repeat: no-repeat; }\n    .icon-img.linkedin:hover {\n      background: url(" + __webpack_require__(258) + ");\n      background-size: 60px;\n      background-repeat: no-repeat; }\n  .icon-img.git {\n    background: url(" + __webpack_require__(259) + ");\n    background-size: 60px;\n    background-repeat: no-repeat; }\n    .icon-img.git:hover {\n      background: url(" + __webpack_require__(260) + ");\n      background-size: 60px;\n      background-repeat: no-repeat; }\n\n.find-me {\n  padding: 30px; }\n\n.icon-img-small {\n  width: 43px; }\n  .icon-img-small.angel {\n    background: url(" + __webpack_require__(261) + ");\n    background-size: 43px;\n    background-repeat: no-repeat; }\n    .icon-img-small.angel:hover {\n      background: url(" + __webpack_require__(262) + ");\n      background-size: 43px;\n      background-repeat: no-repeat; }\n\n.list {\n  display: inline-block; }\n\n.navbar-default {\n  background-color: #333333;\n  box-shadow: 0 3px 3px #c0c0c0;\n  border: none; }\n  .navbar-default .navbar-nav {\n    float: right; }\n  .navbar-default .container {\n    width: inherit; }\n  .navbar-default .navbar-nav > li > a {\n    color: #fff;\n    font-size: 14px;\n    font-weight: 800;\n    letter-spacing: 2px;\n    padding: 10px 10px 5px;\n    text-align: left; }\n\n.three-x {\n  font-size: 3em !important; }\n\n.two-x {\n  font-size: 2em !important; }\n\n.onehalf-x {\n  font-size: 1.5em !important; }\n\n.list {\n  text-decoration: none;\n  list-style-type: none;\n  margin-bottom: 20px; }\n\n.sub {\n  margin-bottom: 20px;\n  font-size: 18px; }\n\n/* Custom page header */\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px; }\n\n.intro-row {\n  height: 300px;\n  text-align: center; }\n\n.intro {\n  font-size: 25px;\n  color: #fff;\n  text-align: center;\n  position: relative;\n  font-family: 'Waiting for the Sunrise', cursive;\n  top: 14%;\n  transform: translateY(-50%);\n  margin-right: 40px;\n  margin-left: 40px; }\n\n.btn-warning {\n  margin-top: 15px;\n  background-color: #5f8be5;\n  margin-top: 15px;\n  border-color: #2E646D;\n  width: 125px; }\n  .btn-warning:hover {\n    background-color: #2f61c6;\n    border-color: #2f61c6; }\n\n.blake {\n  width: 120px;\n  margin-top: 35px;\n  border-radius: 5px; }\n\n.edmodo {\n  margin-top: 20px; }\n\n.achievements div {\n  margin-top: 10px;\n  font-size: 18px;\n  margin-right: 10px;\n  color: #000000; }\n\n.achievements.fonts {\n  margin-top: 5px; }\n\n.edmodo-img {\n  width: 55px; }\n\n.ncti-img {\n  width: 125px; }\n\n.achievements {\n  margin-bottom: 40px; }\n\n.shredder {\n  text-align: center; }\n  .shredder img {\n    border-radius: 300px; }\n\n.container-narrow > hr {\n  margin: 30px 0; }\n\n.jagged {\n  background-repeat: repeat-x;\n  min-height: 10px; }\n\n.second {\n  padding-bottom: 20px; }\n\n.third {\n  background-color: #333333;\n  color: #fff;\n  padding-bottom: 20px; }\n  .third h2 {\n    text-align: center;\n    margin: 50px 0; }\n\n.text-container {\n  padding: 30px;\n  font-size: 20px; }\n\n.mid-text {\n  margin: 30px 0; }\n\n.cursive {\n  font-family: 'Josefin Slab', serif; }\n\n.email {\n  margin-bottom: 20px; }\n\n.contact a {\n  color: inherit; }\n\n.blink-me {\n  animation: blinker 1s linear infinite; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #FFFFFF !important; }\n\n.ajax-response {\n  margin-top: 20px;\n  font-size: 20px; }\n\n.bp-blue {\n  height: 50px;\n  margin: 0;\n  width: 7%;\n  background-size: 94%;\n  float: right;\n  display: inline-block;\n  background-repeat: no-repeat; }\n\n@keyframes blinker {\n  50% {\n    opacity: 0.0; } }\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n  .navbar-nav {\n    padding-top: 5px; }\n  .small {\n    display: none; }\n  /* Remove the padding we set earlier */\n  .footer,\n  .header,\n  .marketing {\n    padding-left: 0;\n    padding-right: 0; }\n  /* Remove the bottom border on the jumbotron for visual effect */\n  .jumbotron {\n    border-bottom: 0; } }\n\n@media screen and (max-width: 599px) {\n  .intro {\n    font-size: 20px; }\n  .icon-img {\n    width: 45px;\n    background-size: 35px !important; }\n  .find-me {\n    padding: 20px; }\n  .icon-img-small {\n    width: 32.5px;\n    background-size: 25px !important; } }\n\n@media screen and (max-width: 768px) {\n  .small {\n    margin: 15px 15px -5px 25px;\n    width: 13%;\n    background-size: 33px;\n    float: none;\n    display: inline-block; }\n  .large {\n    display: none; }\n  .navbar-toggle {\n    margin-bottom: 0;\n    margin-top: 16px; } }\n\n.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {\n  color: #5f8be5; }\n", ""]);
 
 	// exports
 
@@ -29162,6 +29163,42 @@
 
 /***/ },
 /* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "5cd7c8d7b9ac3412e68181dc2ab0e7f9.png";
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "893abbae04b0efee488820dea0eb54ab.png";
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "8f65afcebd21b18f3d5a4caa129aff4e.png";
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "61407f57a9cb8355b528ece8732fbd48.png";
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "48990dfe50ac83668bfed56297756f4f.png";
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "69260e32cce80f9f0fa5a8613c0f3915.png";
+
+/***/ },
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -29413,7 +29450,7 @@
 
 
 /***/ },
-/* 258 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29423,7 +29460,7 @@
 	var ReactCSSTransitionGroup = __webpack_require__(241);
 	__webpack_require__(254);
 
-	var goat = __webpack_require__(259);
+	var goat = __webpack_require__(265);
 
 	var goatStyles = {
 	  float: "left",
@@ -29464,7 +29501,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { className: 'pointer' },
+	                  { className: 'pointer', href: '#about' },
 	                  'ABOUT'
 	                )
 	              ),
@@ -29473,7 +29510,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { className: 'pointer' },
+	                  { className: 'pointer', href: '#resume' },
 	                  'RESUME'
 	                )
 	              ),
@@ -29482,7 +29519,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { className: 'pointer' },
+	                  { className: 'pointer', href: '#contact' },
 	                  'CONTACT'
 	                )
 	              )
@@ -29502,13 +29539,13 @@
 	module.exports = Header;
 
 /***/ },
-/* 259 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "58b21e5590ac1f0c6f43085db5117a6f.svg";
 
 /***/ },
-/* 260 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29516,7 +29553,7 @@
 	var React = __webpack_require__(2);
 	var ReactCSSTransitionGroup = __webpack_require__(241);
 
-	var shredderImg = __webpack_require__(261);
+	var shredderImg = __webpack_require__(267);
 
 	var Achievements = function Achievements(props) {
 	  return React.createElement(
@@ -29561,19 +29598,19 @@
 	module.exports = Achievements;
 
 /***/ },
-/* 261 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "aa837539f4631ea448de57a2b7ad1bf2.png";
 
 /***/ },
-/* 262 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
-	var Home = __webpack_require__(263);
+	var Home = __webpack_require__(269);
 
 	var HomeContainer = React.createClass({
 	  displayName: 'HomeContainer',
@@ -29625,16 +29662,16 @@
 	module.exports = HomeContainer;
 
 /***/ },
-/* 263 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
 	var PropTypes = React.PropTypes;
-	var Achievements = __webpack_require__(260);
-	var Resume = __webpack_require__(264);
-	var ContactContainer = __webpack_require__(268);
+	var Achievements = __webpack_require__(266);
+	var Resume = __webpack_require__(270);
+	var ContactContainer = __webpack_require__(274);
 
 	var typewriterStyle = {
 	  color: "#333333",
@@ -29642,8 +29679,8 @@
 	};
 
 	function Home(props) {
-	  var img = __webpack_require__(275);
-	  var jaggedImg = __webpack_require__(276);
+	  var img = __webpack_require__(279);
+	  var jaggedImg = __webpack_require__(280);
 	  var jagged = {
 	    backgroundImage: 'url(' + jaggedImg + ')'
 	  };
@@ -29657,7 +29694,7 @@
 	    null,
 	    React.createElement(
 	      'div',
-	      { className: 'intro-row' },
+	      { className: 'intro-row', id: 'about' },
 	      React.createElement('img', { className: 'blake', src: img, style: picStyle }),
 	      React.createElement(
 	        'div',
@@ -29680,7 +29717,7 @@
 	module.exports = Home;
 
 /***/ },
-/* 264 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29688,14 +29725,14 @@
 	var React = __webpack_require__(2);
 	var ReactCSSTransitionGroup = __webpack_require__(241);
 
-	var edmodoImg = __webpack_require__(265);
-	var alpineImg = __webpack_require__(266);
-	var nctiImg = __webpack_require__(267);
+	var edmodoImg = __webpack_require__(271);
+	var alpineImg = __webpack_require__(272);
+	var nctiImg = __webpack_require__(273);
 
 	var Resume = function Resume(props) {
 	  return React.createElement(
 	    'div',
-	    { className: 'container' },
+	    { className: 'container', id: 'resume' },
 	    React.createElement(
 	      'ul',
 	      null,
@@ -29816,30 +29853,30 @@
 	module.exports = Resume;
 
 /***/ },
-/* 265 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "d7555de1cdc9fe0ac2686cbc96f5fb9f.png";
 
 /***/ },
-/* 266 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "be5eea917340799eca2d443312889599.png";
 
 /***/ },
-/* 267 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "6ab8fb9d982e6e42ddf8a52deab07fdd.png";
 
 /***/ },
-/* 268 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _jquery = __webpack_require__(269);
+	var _jquery = __webpack_require__(275);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -29848,7 +29885,7 @@
 	var React = __webpack_require__(2);
 	var Main = __webpack_require__(236);
 
-	var Contact = __webpack_require__(270);
+	var Contact = __webpack_require__(276);
 
 
 	var previousTop;
@@ -29857,25 +29894,36 @@
 	  displayName: 'ContactContainer',
 
 	  getInitialState: function getInitialState() {
-	    return { subject: null,
-	      text: null,
-	      response: null
+	    return { formItems: { email: '',
+	        bodyText: '',
+	        response: null }
 	    };
 	  },
 	  handleChange: function handleChange(event) {
 	    if (event.target.id == 'email') {
-	      this.state.email = event.target.value;
+	      this.setState({
+	        formItems: {
+	          email: event.target.value,
+	          bodyText: this.state.formItems.bodyText
+	        }
+	      });
 	    } else {
-	      this.state.text = event.target.value;
+	      this.setState({
+	        formItems: {
+	          bodyText: event.target.value,
+	          email: this.state.formItems.email
+	        }
+	      });
 	    }
+	    console.log(this.state);
 	  },
 
 	  submitForm: function submitForm(event) {
 	    var _this = this;
 
 	    var data = {
-	      'sender': this.state.email,
-	      'textBody': this.state.text
+	      'sender': this.state.formItems.email,
+	      'textBody': this.state.formItems.bodyText
 	    };
 
 	    _jquery2.default.ajax({
@@ -29885,12 +29933,11 @@
 	      data: data,
 	      cache: false,
 	      success: function success(data) {
-	        console.log(data);
-	        if ('err' in data) {
-	          _this.setState({ response: data.err });
-	        } else {
-	          _this.setState({ response: data.success });
-	        }
+	        _this.setState({ formItems: {
+	            email: '',
+	            bodyText: '',
+	            response: 'Thanks for your email! I will get back to you soon.'
+	          } });
 	      },
 	      error: function error(xhr, status, err) {
 	        console.error(err);
@@ -29899,14 +29946,14 @@
 	  },
 
 	  render: function render() {
-	    return React.createElement(Contact, { handleChange: this.handleChange, submitForm: this.submitForm });
+	    return React.createElement(Contact, { handleChange: this.handleChange, submitForm: this.submitForm, formItems: this.state.formItems });
 	  }
 	});
 
 	module.exports = ContactContainer;
 
 /***/ },
-/* 269 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -40132,7 +40179,7 @@
 
 
 /***/ },
-/* 270 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40140,12 +40187,12 @@
 	var React = __webpack_require__(2);
 	var PropTypes = React.PropTypes;
 
-	var Find = __webpack_require__(271);
+	var FindContainer = __webpack_require__(277);
 
 	var Contact = function Contact(props) {
 	  return React.createElement(
 	    'div',
-	    { className: 'third' },
+	    { className: 'third', id: 'contact' },
 	    React.createElement(
 	      'div',
 	      { className: 'container contact' },
@@ -40157,7 +40204,7 @@
 	      React.createElement(
 	        'div',
 	        { className: 'sub' },
-	        'I do web development, play soccer with you, babysit your kids. Message me and let\'s chat!'
+	        'I\'m a great developer, undefeated U5 soccer coach, and Mario Party champion. Drop me a line and let\'s chat.'
 	      ),
 	      React.createElement(
 	        'form',
@@ -40170,7 +40217,7 @@
 	            { className: 'control-label' },
 	            'Your email.'
 	          ),
-	          React.createElement('input', { className: 'form-control email', name: 'email', id: 'email', onChange: props.handleChange, required: true }),
+	          React.createElement('input', { className: 'form-control email', name: 'email', id: 'email', value: props.formItems.email, onChange: props.handleChange, required: true }),
 	          React.createElement(
 	            'div',
 	            null,
@@ -40180,96 +40227,91 @@
 	              'What\'s up?'
 	            )
 	          ),
-	          React.createElement('textarea', { className: 'form-control', id: 'text', onChange: props.handleChange }),
+	          React.createElement('textarea', { className: 'form-control', id: 'text', value: props.formItems.bodyText, onChange: props.handleChange }),
 	          React.createElement(
 	            'div',
 	            { className: 'text-center' },
-	            React.createElement(
+	            !props.formItems.response ? React.createElement(
 	              'div',
 	              { className: 'btn btn-warning', onClick: props.submitForm },
 	              'Send'
+	            ) : React.createElement(
+	              'div',
+	              { className: 'ajax-response' },
+	              props.formItems.response
 	            )
 	          )
 	        )
 	      ),
-	      React.createElement(Find, null)
+	      React.createElement(FindContainer, null)
 	    )
 	  );
 	};
 
 	Contact.propTypes = {
 	  handleChange: PropTypes.func,
-	  submitForm: PropTypes.func
+	  submitForm: PropTypes.func,
+	  formItems: PropTypes.object
+
 	};
 
 	module.exports = Contact;
 
 /***/ },
-/* 271 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
+	var Find = __webpack_require__(278);
 
-	var gitImg = __webpack_require__(272);
-	var linkedinImg = __webpack_require__(273);
-	var angelImg = __webpack_require__(274);
+	var previousTop;
+
+	var FindContainer = React.createClass({
+	  displayName: 'FindContainer',
+
+
+	  render: function render() {
+	    return React.createElement(Find, null);
+	  }
+	});
+
+	module.exports = FindContainer;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(2);
+	var PropTypes = React.PropTypes;
 
 	var Find = function Find(props) {
-	  return React.createElement(
-	    'div',
-	    { className: 'second' },
-	    React.createElement(
-	      'div',
-	      { className: 'contact text-center' },
-	      React.createElement(
-	        'a',
-	        { className: 'find-me', href: 'https://www.github.com/blakeparkinson/', target: '_blank' },
-	        React.createElement('img', { className: 'icon-img', src: gitImg })
-	      ),
-	      React.createElement(
-	        'a',
-	        { className: 'find-me', href: 'https://www.linkedin.com/in/bparky', target: '_blank' },
-	        React.createElement('img', { className: 'icon-img', src: linkedinImg })
-	      ),
-	      React.createElement(
-	        'a',
-	        { className: 'find-me', href: 'https://angel.co/blake-parkinson', target: '_blank' },
-	        React.createElement('img', { className: 'icon-img-small', src: angelImg })
-	      )
-	    )
-	  );
+	    return React.createElement(
+	        "div",
+	        { className: "second" },
+	        React.createElement(
+	            "div",
+	            { className: "contact text-center" },
+	            React.createElement("a", { className: "find-me icon-img git", href: "https://www.github.com/blakeparkinson/", target: "_blank" }),
+	            React.createElement("a", { className: "find-me icon-img linkedin middle", href: "https://www.linkedin.com/in/bparky", target: "_blank" }),
+	            React.createElement("a", { className: "find-me icon-img-small angel", href: "https://angel.co/blake-parkinson", target: "_blank" })
+	        )
+	    );
 	};
 
 	module.exports = Find;
 
 /***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "8f65afcebd21b18f3d5a4caa129aff4e.png";
-
-/***/ },
-/* 273 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "5cd7c8d7b9ac3412e68181dc2ab0e7f9.png";
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "48990dfe50ac83668bfed56297756f4f.png";
-
-/***/ },
-/* 275 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "30cb759c47997ee67ad40088a60f30c1.png";
 
 /***/ },
-/* 276 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "388002178103c8ce68d8afefb7b513d8.png";

@@ -155,13 +155,13 @@ body {
 
 .btn-warning {
     margin-top: 15px;
-    background-color: #5f8be5;
+    background-color: #5f8be5 !important;
     margin-top: 15px;
     border-color: #2E646D;
     width: 125px;
 
     &:hover {
-        background-color: #2f61c6;
+        background-color: #2f61c6 !important;
         border-color: #2f61c6;
     }
 }
