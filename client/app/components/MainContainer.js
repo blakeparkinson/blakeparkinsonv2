@@ -31,9 +31,6 @@ var MainContainer = React.createClass({
        });
     }
     previousTop = top;
-
-
-
   },
 
   render: function () {
