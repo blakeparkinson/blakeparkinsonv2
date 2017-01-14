@@ -7,8 +7,7 @@ var goat = require('../images/goat.svg');
 
 var goatStyles = {
   float: "left",
-  width: "40px",
-  marginTop: "8px"
+  width: "40px"
 };
 
 var mainStyle = {
@@ -19,36 +18,30 @@ var mainStyle = {
 var Header = props => (
 
       <div className='main-container' style={mainStyle}>
+      <div className={props.headerClass} id="mainHeader">
+<nav className="navbar header-nav navbar-toggleable-md">
+  <div className="row">
 
-<div className={props.headerClass} id="mainHeader">
-<div className="navbar-default" role="navigation">
-  <div className="container">
-
-    <div className="logo">
+    <div className="logo col align-self-start">
       <img style={goatStyles} src={goat}/>
     </div>
-    <div className="">
-
+    <div className="col align-self-end">
       <ul className="nav navbar-nav">
-        <li>
+        <li className="nav-item">
           <a className="pointer" href="#about">ABOUT</a>
         </li>
-        <li>
+        <li className="nav-item">
           <a className="pointer" href="#resume">RESUME</a>
         </li>
-        <li>
+        <li className="nav-item">
           <a className="pointer" href="#contact">CONTACT</a>
         </li>
       </ul>
-      <span className="bp-blue large"></span>
+      </div>
     </div>
 
-  </div>
+</nav>
 </div>
-
-</div>
-
-
 </div>
 
     );

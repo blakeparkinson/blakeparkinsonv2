@@ -7,7 +7,7 @@ var nctiImg = require('../images/ncti.png');
 
 
 var Resume = props => (
-  <div className="container" id="resume">
+  <div className="container resume-container" id="resume">
 
     <ul>
       <h1 className="text-center">Places I've worked</h1>
