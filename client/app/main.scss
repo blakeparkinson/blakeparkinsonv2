@@ -314,6 +314,7 @@ body {
 @media screen and (min-width: 768px) {
     .navbar-nav {
         padding-top: 5px;
+        margin-top: -5px !important;
     }
 
     .small {
