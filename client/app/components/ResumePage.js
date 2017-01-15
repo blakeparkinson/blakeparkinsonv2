@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var ResumePage = props => (
-  <div className="resume-page">
+  <div className="resume-page row">
   <div className="col-xs-12 col-md-11 col-md-centered col-lg-10 col-lg-push-1">
     <div className="heading text-center">
       <h1 class="heading-title">Blake Parkinson
@@ -10,7 +10,7 @@ var ResumePage = props => (
       <h6 class="heading-subtitle">
         wizardplow@gmail.com •
         415-205-0841
-        <span className="hidden-sm-up spacer">
+        <span className="spacer">
         • Erie, CO
         </span>
       </h6>
@@ -29,9 +29,38 @@ var ResumePage = props => (
       </div>
     </div>
     </div>
+    <div className="row">
+    <div className="col-xs-12 col-md-3">
+      <h2 className="resume-heading">Work Experience</h2>
+    </div>
+    <div className="col-xs-12 col-md-9">
+    {props.positions.map((job) => {
+      return jobMarkup(job);
+    })}
+
+    </div>
+    </div>
   </div>
 
 </div>
 )
+
+function jobMarkup (job){
+  var markup = <div className="resume-category">
+    <div className="position">
+      <h4>
+        {job.place}
+        <small className="resume-role"> {job.title} | {job.dates}</small>
+        <p>{job.description}</p>
+      </h4>
+    </div>
+  </div>;
+  return markup;
+
+}
+
+ResumePage.propTypes = {
+  positions: PropTypes.array
+}
 
 module.exports = ResumePage;
