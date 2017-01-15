@@ -51,8 +51,9 @@ function jobMarkup (job){
       <h4>
         {job.place}
         <small className="resume-role"> {job.title} | {job.dates}</small>
-        <p>{job.description}</p>
       </h4>
+      <p>{job.description}</p>
+
     </div>
   </div>;
   return markup;
