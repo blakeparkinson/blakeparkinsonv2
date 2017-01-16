@@ -9,16 +9,8 @@
 }
 
 .main-container {
-  font-family: "ff-tisa-web-pro",Palatino," Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
-    font-size: 18px;
-    font-size: 1.125rem;
-    line-height: 30px;
-    line-height: 1.875rem;
     .heading {
         padding: 50px 0;
-    }
-    p, li {
-      color: #333;
     }
 
     .resume-category {
@@ -65,9 +57,17 @@
 }
 
 .resume-page {
+  font-family: "ff-tisa-web-pro",Palatino," Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 30px;
+    line-height: 1.875rem;
     h1,
     h2 {
         letter-spacing: -2px;
+    }
+    p, li {
+      color: #333;
     }
 
     .h1,
