@@ -17,11 +17,21 @@
     .heading {
         padding: 50px 0;
     }
+    p, li {
+      color: #333;
+    }
 
     .resume-category {
         border-bottom: 1px solid #CCC;
         margin: 0 0 3.125rem;
         padding: 0 0 3.125rem;
+    }
+    .resume-section {
+        margin: 0 0 3.125rem;
+        padding: 0 0 3.125rem;
+        &:last-of-type{
+          border-bottom: 1px solid #CCC;
+        }
     }
 
     .resume-role {
@@ -363,7 +373,7 @@ body {
     }
 }
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 400px) {
     .navbar-nav {
         padding-top: 5px;
         margin-top: -5px !important;

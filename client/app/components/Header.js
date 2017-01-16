@@ -22,9 +22,9 @@ var Header = props => (
 <nav className="navbar header-nav navbar-toggleable-md">
   <div className="row">
 
-    <div className="logo col align-self-start">
+    <a className="logo col align-self-start" href="#">
       <img style={goatStyles} src={goat}/>
-    </div>
+    </a>
     <div className="col align-self-end">
       <ul className="nav navbar-nav">
         <li className="nav-item">
