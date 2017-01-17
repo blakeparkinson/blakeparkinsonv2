@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var ResumePage = props => (
-  <div className="resume-page row">
+  <div className="resume-page">
   <div className="col-xs-12 col-md-11 col-md-centered col-lg-10 col-lg-push-1">
     <div className="heading text-center">
       <h1 class="heading-title">Blake Parkinson

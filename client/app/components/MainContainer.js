@@ -6,14 +6,30 @@ var previousTop;
 var MainContainer = React.createClass({
   getInitialState: function () {
     return {
-      headerClass: ''
+      headerClass: '',
+      open: false,
+      smallMenuStyle : 'none'
     }
   },
   componentDidMount: function () {
 
     window.addEventListener('scroll', this.handleScroll);
+  },
 
+  hamburgerClick: function(event){
+    if (this.state.open){
+      this.setState({
+        open: false,
+        smallMenuStyle : 'none'
 
+      })
+    }
+    else{
+      this.setState({
+        open: true,
+        smallMenuStyle: 'block'
+      })
+    }
   },
 
   handleScroll: function(event){
@@ -34,8 +50,9 @@ var MainContainer = React.createClass({
   },
 
   render: function () {
+    console.log(this.hamburgerClick);
     return (
-      <Main children={this.props.children} headerClass={this.state.headerClass}/>
+      <Main hamburgerClick={this.hamburgerClick} children={this.props.children} headerClass={this.state.headerClass} open={this.state.open} smallMenuStyle={this.state.smallMenuStyle}/>
     )
   }
 });

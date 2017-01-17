@@ -12,9 +12,7 @@ var Main = props => (
   <StickyContainer>
 
       <div className='main-container'>
-      <Sticky>
-        <Header headerClass={props.headerClass}/>
-        </Sticky>
+        <Header headerClass={props.headerClass} open={props.open} hamburgerClick={props.hamburgerClick} smallMenuStyle={props.smallMenuStyle}/>
 
         {props.children}
 
@@ -25,8 +23,11 @@ var Main = props => (
   )
 
   Main.propTypes = {
+    hamburgerClick: PropTypes.func,
     children: PropTypes.object,
-    headerClass: PropTypes.string
+    headerClass: PropTypes.string,
+    open:PropTypes.string,
+    smallMenuStyle:PropTypes.string
   }
 
 
