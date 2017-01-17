@@ -9,7 +9,7 @@ var positions = [
     place: 'ALPINE LABS',
     title: 'Software Engineer',
     dates: 'FEB 2016 - CURRENT',
-    description: 'Designed and built the google play and iTunes app “Pulse” using objective-c, java, ionic, and cordova. This application allows you to control your camera wirelessly from your smartphone or tablet utilizing Bluetooth low-energy and Bluetooth classic. Wrote open-source plugins for communicating to devices over Bluetooth classic, which had yet to be done (https://github.com/blakeparkinson/cordova-bluetooth-classic.) Contributed multiple open source front end plugins for the ionic framework.'
+    description: 'Designed and built the google play and iTunes app “Pulse” using objective-c, java, ionic, and cordova. This application allows you to control your camera wirelessly from your smartphone or tablet utilizing Bluetooth low-energy and Bluetooth classic. Wrote open-source plugins for communicating to devices over Bluetooth classic, which had yet to be done. Contributed multiple open source front end plugins for the ionic framework.'
   },
   {
     place: 'NCTI',
