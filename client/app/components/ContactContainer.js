@@ -8,23 +8,25 @@ var previousTop;
 
 var ContactContainer = React.createClass({
   getInitialState: function() {
-    return { formItems : {email: '',
-      bodyText: '',
-      response: null}
+    return {
+      formItems: {
+        email: '',
+        bodyText: '',
+        response: null
+      }
     };
   },
-  handleChange: function(event){
-    if (event.target.id =='email'){
+  handleChange: function(event) {
+    if (event.target.id == 'email') {
       this.setState({
         formItems: {
-          email : event.target.value,
+          email: event.target.value,
           bodyText: this.state.formItems.bodyText
         }
       });
-    }
-    else{
+    } else {
       this.setState({
-        formItems:{
+        formItems: {
           bodyText: event.target.value,
           email: this.state.formItems.email
         }
@@ -33,35 +35,35 @@ var ContactContainer = React.createClass({
     console.log(this.state);
   },
 
-  submitForm: function(event){
+  submitForm: function(event) {
     var data = {
       'sender': this.state.formItems.email,
       'textBody': this.state.formItems.bodyText
     };
 
     $.ajax({
-     url: 'https://blakeparkinson.herokuapp.com/main/email',
-     type: 'POST',
-     dataType: 'json',
-     data: data,
-     cache: false,
-     success: (data) => {
-       this.setState({formItems: {
-         email: '',
-         bodyText: '',
-         response: 'Thanks for your email! I will get back to you soon.'
-       }});
-     },
-     error: (xhr, status, err) => {
-       console.error(err);
-     }
-   });
- },
+      url: 'https://blakeparkinson.herokuapp.com/main/email',
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      cache: false,
+      success: (data) => {
+        this.setState({
+          formItems: {
+            email: '',
+            bodyText: '',
+            response: 'Thanks for your email! I will get back to you soon.'
+          }
+        });
+      },
+      error: (xhr, status, err) => {
+        console.error(err);
+      }
+    });
+  },
 
-  render: function () {
-    return (
-      <Contact handleChange={this.handleChange} submitForm={this.submitForm} formItems={this.state.formItems}/>
-    )
+  render: function() {
+    return (<Contact handleChange={this.handleChange} submitForm={this.submitForm} formItems={this.state.formItems}/>)
   }
 });
 

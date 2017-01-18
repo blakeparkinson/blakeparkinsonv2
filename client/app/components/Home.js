@@ -9,30 +9,27 @@ var typewriterStyle = {
   fontFamily: "'Special Elite', cursive"
 };
 
-
-
-function Home (props) {
+function Home(props) {
   var img = require('../images/blake.png');
   var jaggedImg = require('../images/jagged-black.png');
   var jagged = {
-    backgroundImage: 'url('+jaggedImg+')'
+    backgroundImage: 'url(' + jaggedImg + ')'
   };
 
   var picStyle = {
     opacity: props.opacity
   };
 
-
   return (
     <div>
-    <div className="intro-row" id="about">
-      <img className="blake" src={img} style={picStyle}/>
-      <div className="intro" style={typewriterStyle}>{props.typewriter}</div>
-    </div>
-    <div className="jagged" style={jagged}></div>
-    <Achievements/>
-    <Resume/>
-    <ContactContainer/>
+      <div className="intro-row" id="about">
+        <img className="blake" src={img} style={picStyle}/>
+        <div className="intro" style={typewriterStyle}>{props.typewriter}</div>
+      </div>
+      <div className="jagged" style={jagged}></div>
+      <Achievements/>
+      <Resume/>
+      <ContactContainer/>
     </div>
   )
 }
