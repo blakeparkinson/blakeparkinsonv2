@@ -3,12 +3,18 @@ var Main = require('./Main');
 
 var previousTop;
 
+var goatIconWhite = require('../images/blake-goat-text-white.svg');
+var goatIconBlack = require('../images/blake-goat-text-black.svg');
+
+
 var MainContainer = React.createClass({
   getInitialState: function () {
     return {
       headerClass: '',
       open: false,
-      smallMenuStyle : 'none'
+      smallMenuStyle : 'none',
+      headerLeftIcon: goatIconBlack,
+      hamburglarColor: 'black'
     }
   },
   componentDidMount: function () {
@@ -38,12 +44,16 @@ var MainContainer = React.createClass({
     var top  = window.pageYOffset || document.documentElement.scrollTop;
     if (top > headerHeight + 50){
       this.setState({
-        headerClass: 'slideOutUp animated'
+        headerClass: 'blackHeader',
+        headerLeftIcon: goatIconWhite,
+        hamburglarColor: 'white'
       });
     }
     else{
       this.setState({
-         headerClass: 'slideInDown animated'
+         headerClass: '',
+         headerLeftIcon: goatIconBlack,
+         hamburglarColor: 'black'
        });
     }
     previousTop = top;
@@ -51,7 +61,7 @@ var MainContainer = React.createClass({
 
   render: function () {
     return (
-      <Main hamburgerClick={this.hamburgerClick} children={this.props.children} headerClass={this.state.headerClass} open={this.state.open} smallMenuStyle={this.state.smallMenuStyle}/>
+      <Main hamburgerClick={this.hamburgerClick} hamburglarColor={this.state.hamburglarColor} children={this.props.children} headerClass={this.state.headerClass} open={this.state.open} headerLeftIcon={this.state.headerLeftIcon} smallMenuStyle={this.state.smallMenuStyle}/>
     )
   }
 });

@@ -26,7 +26,6 @@ function Home(props) {
         <img className="blake" src={img} style={picStyle}/>
         <div className="intro" style={typewriterStyle}>{props.typewriter}</div>
       </div>
-      <div className="jagged" style={jagged}></div>
       <Achievements/>
       <Resume/>
       <ContactContainer/>

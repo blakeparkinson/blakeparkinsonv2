@@ -2,14 +2,15 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 import HamburgerMenu from 'react-hamburger-menu';
+import {StickyContainer, Sticky} from 'react-sticky';
+
 
 require('../main.scss');
 
-var goat = require('../images/goat.svg');
 
 var goatStyles = {
   float: "left",
-  width: "40px"
+  width: "190px"
 };
 
 var mainStyle = {
@@ -18,16 +19,16 @@ var mainStyle = {
 
 var Header = props => (
 
-  <div className='main-container' style={mainStyle}>
-    <div className={props.headerClass} id="mainHeader">
-      <nav className="navbar header-nav navbar-toggleable-md">
+    <div id="mainHeader" style={mainStyle}>
+    <Sticky>
+      <nav className={props.headerClass + ' navbar header-nav'}>
         <div className="row">
           <a className="logo col align-self-start" href="#">
-            <img style={goatStyles} src={goat}/>
+            <img style={goatStyles} src={props.headerLeftIcon}/>
           </a>
           <div className="col align-self-end">
             <div className="hamburglar">
-              <HamburgerMenu isOpen={props.open} menuClicked={props.hamburgerClick} rotate={0} color='white' width={24} height={20} borderRadius={0} animationDuration={0.5}/>
+              <HamburgerMenu isOpen={props.open} menuClicked={props.hamburgerClick} rotate={0} color={props.hamburglarColor} width={20} height={15} borderRadius={0} animationDuration={0.5}/>
             </div>
             <ul className="nav navbar-nav lg">
               <li className="nav-item">
@@ -59,8 +60,8 @@ var Header = props => (
         </div>
 
       </nav>
+      </Sticky>
     </div>
-  </div>
 
 );
 
@@ -68,7 +69,9 @@ Header.propTypes = {
   headerClass: PropTypes.string,
   open: PropTypes.bool,
   hamburgerClick: PropTypes.func,
-  smallMenuStyle: PropTypes.string
+  smallMenuStyle: PropTypes.string,
+  headerLeftIcon: PropTypes.string,
+  hamburglarColor: PropTypes.string
 }
 
 module.exports = Header;

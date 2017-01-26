@@ -10,8 +10,7 @@ var Main = props => (
   <StickyContainer>
 
     <div className='main-container'>
-      <Header headerClass={props.headerClass} open={props.open} hamburgerClick={props.hamburgerClick} smallMenuStyle={props.smallMenuStyle}/> {props.children}
-
+      <Header headerLeftIcon={props.headerLeftIcon} hamburglarColor={props.hamburglarColor} headerClass={props.headerClass} open={props.open} hamburgerClick={props.hamburgerClick} smallMenuStyle={props.smallMenuStyle}/> {props.children}
     </div>
   </StickyContainer>
 
@@ -21,8 +20,11 @@ Main.propTypes = {
   hamburgerClick: PropTypes.func,
   children: PropTypes.object,
   headerClass: PropTypes.string,
+  headerLeftIcon: PropTypes.string,
   open: PropTypes.string,
-  smallMenuStyle: PropTypes.string
+  smallMenuStyle: PropTypes.string,
+  hamburglarColor: PropTypes.string
+
 }
 
 module.exports = Main;

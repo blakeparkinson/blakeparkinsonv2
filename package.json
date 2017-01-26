@@ -22,6 +22,7 @@
     "react-dom": "^15.4.1",
     "react-hamburger-menu": "0.0.4",
     "react-router": "^3.0.0",
+    "react-sticky": "^5.0.5",
     "response-time": "^2.3.2"
   },
   "devDependencies": {

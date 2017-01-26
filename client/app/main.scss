@@ -8,6 +8,10 @@
   left: 8.33333%;
 }
 
+#mainHeader{
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
 .main-container {
   .heading {
     padding: 50px 0;
@@ -171,6 +175,16 @@ body {
 
 .header-nav {
   flex-direction: column;
+  padding: 3em 4em;
+  &.blackHeader{
+    background-color: #333333;
+    box-shadow: 0 1px 1px #c0c0c0;
+    transition: all .5s ease;
+    padding: 1em 3em;
+    .navbar-nav > li > a {
+      color: #fff;
+    }
+  }
 
   .navbar-nav {
     float: right;
@@ -179,17 +193,14 @@ body {
   .container {
     width: inherit;
   }
-  background-color: #333333;
-  box-shadow: 0 3px 3px #c0c0c0;
-  border: none;
 
   .navbar-nav > li > a {
-    color: #fff;
+    color: #333;
     font-size: 14px;
-    font-weight: 800;
     letter-spacing: 2px;
     padding: 10px 10px 5px;
     text-align: left;
+    font-family: 'Lucida Grande';
   }
 }
 
@@ -228,6 +239,7 @@ body {
 .intro-row {
   height: 300px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .intro {
@@ -350,7 +362,7 @@ body {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFFFFF !important;
+    background-color: rgba(0, 0, 0, 0.02);
 }
 
 .ajax-response {
@@ -360,6 +372,7 @@ body {
 
 .resume-container {
   margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .bp-blue {
@@ -423,6 +436,9 @@ body {
   }
 }
 @media screen and (max-width: 599px) {
+  .header-nav {
+    padding: 1.5em 2em;
+  }
   .intro {
     font-size: 20px;
   }
@@ -430,8 +446,8 @@ body {
   .hamburglar {
     display: block;
     float: right;
-    margin-top: -25px;
     cursor: pointer;
+    margin-top: -17px;
   }
 
   .nav {
