@@ -1,11 +1,13 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
+
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/client/app/index.html',
   filename: 'index.html',
   inject: 'body'
 });
+
 
 var productionPlugin = new webpack.DefinePlugin({
   'process.env': {
@@ -36,20 +38,27 @@ module.exports = {
           presets: ['es2015']
         }
       }, {
-        test: /\.css$/,
-        loader: "style-loader!css-loader",
-        options: {
-          minimize: true || {/* CSSNano Options */
-          }
-        }
-      }, {
         test: /\.scss$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
-      }, {
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              minimize: true || {/* CSSNano Options */
+              }
+            }
+          }
+        ]
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: ["file-loader"]
 
       }
+
     ]
   },
   plugins: [HTMLWebpackPluginConfig, productionPlugin, uglifyPlugin]

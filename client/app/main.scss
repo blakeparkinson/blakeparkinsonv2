@@ -507,18 +507,3 @@ body {
 .navbar-default .navbar-nav > li > a:hover {
   color: #5f8be5;
 }
-
-.col-sm-3 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 25%;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%;
-}
-.col-sm-9 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 75%;
-    -ms-flex: 0 0 75%;
-    flex: 0 0 75%;
-    max-width: 75%;
-}
