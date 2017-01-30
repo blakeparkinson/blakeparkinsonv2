@@ -23,10 +23,10 @@ var Header = props => (
     <Sticky>
       <nav className={props.headerClass + ' navbar header-nav'}>
         <div className="row">
-          <a className="logo col align-self-start" href="#">
+          <a className="logo col align-self-start col-sm-9 col-md-6" href="#">
             <img style={goatStyles} src={props.headerLeftIcon}/>
           </a>
-          <div className="col align-self-end">
+          <div className="col align-self-end col-md-6 col-sm-3">
             <div className="hamburglar">
               <HamburgerMenu isOpen={props.open} menuClicked={props.hamburgerClick} rotate={0} color={props.hamburglarColor} width={20} height={15} borderRadius={0} animationDuration={0.5}/>
             </div>
