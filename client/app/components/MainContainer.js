@@ -3,8 +3,8 @@ var Main = require('./Main');
 
 var previousTop;
 
-var goatIconWhite = require('../images/blake-goat-text-white.svg');
-var goatIconBlack = require('../images/blake-goat-text-black.svg');
+var goatIconWhite = require('../images/blake-goat-text-white.png');
+var goatIconBlack = require('../images/blake-goat-text-black.png');
 
 
 var MainContainer = React.createClass({
