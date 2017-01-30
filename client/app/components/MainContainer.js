@@ -33,12 +33,15 @@ var MainContainer = React.createClass({
     else{
       this.setState({
         open: true,
-        smallMenuStyle: 'block'
+        smallMenuStyle: 'block',
+        headerClass: 'menuOpen blackHeader',
+        headerLeftIcon: goatIconWhite
       })
     }
   },
 
   handleScroll: function(event){
+    if (this.state.open)return;
 
     var headerHeight = document.getElementById('mainHeader').clientHeight;
     var top  = window.pageYOffset || document.documentElement.scrollTop;
