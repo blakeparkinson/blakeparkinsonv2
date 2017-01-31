@@ -35,7 +35,8 @@ var MainContainer = React.createClass({
         open: true,
         smallMenuStyle: 'block',
         headerClass: 'menuOpen blackHeader',
-        headerLeftIcon: goatIconWhite
+        headerLeftIcon: goatIconWhite,
+        hamburglarColor: 'white'
       })
     }
   },
