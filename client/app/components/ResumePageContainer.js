@@ -5,9 +5,15 @@ var previousTop;
 
 var positions = [
   {
+    place: 'BACKBONE PLM',
+    title: 'Senior Software Engineer',
+    dates: 'FEB 2017 - CURRENT',
+    description: 'Tasked with building the Backbone 2.0 Application, using Angular 2, node.js, mongodb, paperjs. This application allows you to design and create any product you like and manage it from design to factory completion. Created a photoshop like experience for image annotations using paper.js. Responsible for both front-end, back-end, and server-side + integration testing.'
+  },
+  {
     place: 'ALPINE LABS',
     title: 'Software Engineer',
-    dates: 'FEB 2016 - CURRENT',
+    dates: 'FEB 2016 - FEB 2017',
     description: 'Designed and built the google play and iTunes app “Pulse” using objective-c, java, ionic, and cordova. This application allows you to control your camera wirelessly from your smartphone or tablet utilizing Bluetooth low-energy and Bluetooth classic. Wrote open-source plugins for communicating to devices over Bluetooth classic, which had yet to be done. Contributed multiple open source front end plugins for the ionic framework.'
   }, {
     place: 'NCTI',
