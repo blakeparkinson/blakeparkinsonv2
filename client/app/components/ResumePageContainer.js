@@ -11,7 +11,7 @@ var positions = [
   },
   {
     place: 'ALPINE LABS',
-    title: 'Software Engineer',
+    title: 'Senior Software Engineer',
     dates: 'FEB 2016 - FEB 2017',
     description:
       'Designed and built the google play and iTunes app “Pulse” using objective-c, java, ionic, and cordova. This application allows you to control your camera wirelessly from your smartphone or tablet utilizing Bluetooth low-energy and Bluetooth classic. Wrote open-source plugins for communicating to devices over Bluetooth classic, which had yet to be done. Contributed multiple open source front end plugins for the ionic framework.'
@@ -25,7 +25,7 @@ var positions = [
   },
   {
     place: 'EDMODO',
-    title: 'Software Engineer',
+    title: 'Senior Software Engineer',
     dates: 'FEB 2013 - JULY 2015',
     description:
       'Largest contributing developer to the main Edmodo.com website (which serves millions of users) accounting for around 40% of commits for the code base. Leading PHP(ugh) Developer of the API used by Edmodo.com, mobile applications, and 3rd party developers. Implemented custom tracking Javascript API which allows us to mine every user action and perform relevant data analysis. Lead frontend Engineer on the Growth team. Responsible for rolling out features that saw the user base grow from 5,000 users to 50 million users during my time there.'
