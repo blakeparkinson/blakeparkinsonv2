@@ -18,7 +18,7 @@ var ResumePage = props => (
         <div className="col-xs-12 col-md-9">
           <div className="resume-category">
             <p>
-              Award winning full-stack developer and designer with more than 7+ years experience
+              Award winning full-stack developer and designer with more than 10+ years experience
               building beautiful applications. Flexible in working environments having positioned
               for startups, digital agencies, and larger companies. Focused on helping agile teams
               with UI development for large scale websites or small client-side web apps.
@@ -72,7 +72,7 @@ var ResumePage = props => (
               </div>
               <div className="col-xs-12 col-lg-4">
                 <ul className="skills">
-                  <li>Javascript Frameworks(React, Angular)</li>
+                  <li>Javascript Frameworks(React, Angular, Vue)</li>
                   <li>Node.js</li>
                   <li>Java</li>
                   <li>Python</li>
